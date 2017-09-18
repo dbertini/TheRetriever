@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="DataSourceSchema.xsd">
-	<name>monet</name>
+	<name>postgres</name>
 	<description>Datasource di produzione schema MONET</description>
-	<url>jdbc:postgresql://host/database</url>
-	<username>monet</username>
-	<password>monet</password>
-	<driver>oracle.jdbc.driver.OracleDriver</driver>
+	<url>jdbc:postgresql://localhost/mypgdb</url>
+	<username>postgres</username>
+	<password>david83</password>
+	<driver>org.postgresql.Driver</driver>
 </dataSource>

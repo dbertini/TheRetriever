@@ -2,12 +2,9 @@
 <!DOCTYPE report>
 <report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ReportSchema.xsd">
 	<name>report1</name>
-	<datasource>monet</datasource>
+	<datasource>postgres</datasource>
 	<sql>
-		select *
-  from movimenti_posizioni a
- where a.abi = 8676
-   and a.ndg = 119351
+		select now()
 	</sql>
 	<cron>00 31 12 ? * MON,TUE,WED,THU,FRI</cron>
 	<description>Report estrazione data</description>

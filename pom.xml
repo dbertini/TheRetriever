@@ -40,17 +40,17 @@
 			<version>2.7</version>
 		</dependency>
 		<!-- jdbc oracle -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.oracle.db.drivers</groupId> -->
-<!-- 			<artifactId>ojdbc</artifactId> -->
-<!-- 			<version>1.6</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.oracle.db.drivers</groupId> -->
+		<!-- <artifactId>ojdbc</artifactId> -->
+		<!-- <version>1.6</version> -->
+		<!-- </dependency> -->
 		<!-- Libreria per l'interazione con Exchange -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>it.bcc.sinergia</groupId> -->
-<!-- 			<artifactId>ExchangeService</artifactId> -->
-<!-- 			<version>2.2.3</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>it.bcc.sinergia</groupId> -->
+		<!-- <artifactId>ExchangeService</artifactId> -->
+		<!-- <version>2.2.3</version> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>com.microsoft.ews-java-api</groupId>
 			<artifactId>ews-java-api</artifactId>
@@ -80,6 +80,12 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>${apache.poi.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.1.4</version>
 		</dependency>
 		
 	</dependencies>

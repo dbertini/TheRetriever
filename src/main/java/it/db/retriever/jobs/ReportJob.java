@@ -20,10 +20,10 @@ import it.db.retriever.core.configuration.entity.QueryResponse;
 import it.db.retriever.core.configuration.entity.Report;
 import it.db.retriever.exporter.ExportInterface;
 import it.db.retriever.exporter.ExportType;
+import it.db.retriever.sender.ReportSenderInterface;
 import it.db.retriever.utils.FileUtils;
 import it.db.retriever.utils.RunningUtils;
 import it.db.retriever.utils.StandardParameter;
-import microsoft.exchange.webservices.data.core.enumeration.misc.ExchangeVersion;
 
 public class ReportJob implements Job {
 
@@ -132,12 +132,13 @@ public class ReportJob implements Job {
 //			SendMailActions act = new SendMailActions(StandardParameter.EXCHANGE_USERNAME,
 //					StandardParameter.EXCHANGE_PASSWORD, ExchangeVersion.Exchange2010_SP2,
 //					StandardParameter.EXCHANGE_USERNAME);
+			ReportSenderInterface act = null;
 			// invio della mail con allegato
 			SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
 			String HTMLBody = this.report.getDescription() + " <br/> Report generato in data <b>" + fmt.format(new java.util.Date()) + "</b>";
 			
-//			act.sendMailWithAttachments(this.report.getDescription(), HTMLBody,
-//					this.report.getRecipient(), this.report.getCclist(), this.report.getCcnlist(), fileName);
+			act.sendMailWithAttachments(this.report.getDescription(), HTMLBody,
+					this.report.getRecipient(), this.report.getCclist(), this.report.getCcnlist(), fileName);
 			
 			LogManager.getLogger(ReportJob.class).debug("Eliminazione del file " + fileName);
 			//eliminazione del file

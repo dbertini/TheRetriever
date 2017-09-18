@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="report" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" minOccurs="1"></xs:element>
+				<xs:element name="datasource" type="xs:string" minOccurs="1"></xs:element>
+				<xs:element name="sql" type="xs:string" minOccurs="1"></xs:element>
+				<xs:element name="cron" type="xs:string" minOccurs="1"></xs:element>
+				<xs:element name="description" type="xs:string" minOccurs="1"></xs:element>
+				<xs:element name="recipient" type="xs:string" minOccurs="1"></xs:element>
+				<xs:element name="cclist" type="xs:string" minOccurs="0"></xs:element>
+				<xs:element name="ccnlist" type="xs:string" minOccurs="0"></xs:element>
+				<xs:element name="export" type="exportType" minOccurs="1"></xs:element>
+				<xs:element name="template" type="xs:string" minOccurs="0"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="exportType">
+		<xs:restriction>
+				<xs:simpleType>
+					<xs:list>
+						<xs:simpleType>
+							<xs:restriction base="xs:token">
+								<xs:enumeration value="CSV" />
+								<xs:enumeration value="XML" />
+								<xs:enumeration value="CSVEXCEL" />
+								<xs:enumeration value="EXCEL" />
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:list>
+				</xs:simpleType>
+			</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

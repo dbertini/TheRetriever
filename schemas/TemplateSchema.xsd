@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:element name="template">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="name" minOccurs="1" />
+				<xs:element ref="title" minOccurs="0" />
+				<xs:element ref="titleTextColor" minOccurs="0" />
+				<xs:element ref="titleBkgColor" minOccurs="0" />
+				<xs:element ref="headers" minOccurs="0" />
+				<xs:element ref="coloumns" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="title" type="xs:string" />
+	<xs:element name="titleTextColor" type="xs:string" />
+	<xs:element name="titleBkgColor" type="xs:string" />
+	<xs:element name="headers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="textColor" minOccurs="0" />
+				<xs:element ref="bkgColor" minOccurs="0" />
+				<xs:element ref="valign" minOccurs="0" />
+				<xs:element ref="halign" minOccurs="0" />
+				<xs:element ref="boxed" minOccurs="0" />
+				<xs:element ref="headersDefinition" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="headersDefinition" nillable="true">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="headerDefinition" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="headerDefinition" nillable="true">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="name" minOccurs="1" />
+				<xs:element ref="heading" minOccurs="1" />
+				<xs:element ref="textColor" minOccurs="0" />
+				<xs:element ref="bkgColor" minOccurs="0" />
+				<xs:element ref="valign" minOccurs="0" />
+				<xs:element ref="halign" minOccurs="0" />
+				<xs:element ref="boxed" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="heading" type="xs:string" />
+	<xs:element name="coloumns">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="coloumn" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="coloumn">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="name" minOccurs="1" />
+				<xs:element ref="textColor" minOccurs="0" />
+				<xs:element ref="bkgColor" minOccurs="0" />
+				<xs:element ref="format" minOccurs="0" />
+				<xs:element ref="valign" minOccurs="0" />
+				<xs:element ref="halign" minOccurs="0" />
+				<xs:element ref="boxed" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="format" type="xs:string" />
+	<xs:element name="name" type="xs:NCName" />
+	<xs:element name="textColor" type="xs:string" />
+	<xs:element name="bkgColor" type="xs:string" />
+	<xs:element name="valign" type="valignType" />
+	<xs:element name="halign" type="halignType" />
+	<xs:element name="boxed" type="boxedType" />
+
+	<xs:simpleType name="valignType">
+		<xs:restriction>
+			<xs:simpleType>
+				<xs:list>
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="TOP" />
+							<xs:enumeration value="CENTER" />
+							<xs:enumeration value="BOTTOM" />
+							<xs:enumeration value="JUSTIFY" />
+							<xs:enumeration value="DISTRIBUTED" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:list>
+			</xs:simpleType>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="halignType">
+		<xs:restriction>
+			<xs:simpleType>
+				<xs:list>
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="GENERAL" />
+							<xs:enumeration value="LEFT" />
+							<xs:enumeration value="CENTER" />
+							<xs:enumeration value="RIGHT" />
+							<xs:enumeration value="FILL" />
+							<xs:enumeration value="JUSTIFY" />
+							<xs:enumeration value="CENTER_SELECTION" />
+							<xs:enumeration value="DISTRIBUTED" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:list>
+			</xs:simpleType>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="boxedType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute ref="border" use="optional"/>
+        <xs:attribute name="color" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+	
+	<xs:attribute name="border">
+		<xs:simpleType>
+			<xs:restriction>
+				<xs:simpleType>
+					<xs:list>
+						<xs:simpleType>
+							<xs:restriction base="xs:token">
+								<xs:enumeration value="NONE" />
+								<xs:enumeration value="THIN" />
+								<xs:enumeration value="MEDIUM" />
+								<xs:enumeration value="DASHED" />
+								<xs:enumeration value="DOTTED" />
+								<xs:enumeration value="THICK" />
+								<xs:enumeration value="DOUBLE" />
+								<xs:enumeration value="HAIR" />
+								<xs:enumeration value="MEDIUM_DASHED" />
+								<xs:enumeration value="DASH_DOT" />
+								<xs:enumeration value="MEDIUM_DASH_DOT" />
+								<xs:enumeration value="DASH_DOT_DOT" />
+								<xs:enumeration value="MEDIUM_DASH_DOT_DOT" />
+								<xs:enumeration value="SLANTED_DASH_DOT" />
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:list>
+				</xs:simpleType>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+
+</xs:schema>

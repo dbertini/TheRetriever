@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/TemplateSchema.xsd">
+	<name>template_base</name>
+<!-- 	<title>Titolo del template</title> -->
+<!-- 	<titleTextColor>0,0,0</titleTextColor> -->
+<!-- 	<titleBkgColor>155,155,155</titleBkgColor> -->
+	<headers>
+		<textColor>255,255,255</textColor>
+		<bkgColor>150,150,150</bkgColor>
+		<valign>CENTER</valign>
+		<halign>CENTER</halign>
+		<boxed border="MEDIUM" color="0,0,0">Y</boxed>
+		<headersDefinition>
+			<headerDefinition>
+				<name>CONTO</name>
+				<heading>Numero Variazioni</heading>
+<!-- 				<textColor>200,200,200</textColor> -->
+<!-- 				<bkgColor>10,10,10</bkgColor> -->
+<!-- 				<valign>CENTER</valign> -->
+<!-- 				<halign>LEFT</halign> -->
+<!-- 				<boxed border="SLANTED_DASH_DOT" color="255,125,0">Y</boxed> -->
+			</headerDefinition>
+			<headerDefinition>
+				<name>COD_ISTITUTO</name>
+				<heading>Cod. Istituto</heading>
+<!-- 				<textColor>200,200,200</textColor> -->
+<!-- 				<bkgColor>10,10,10</bkgColor> -->
+<!-- 				<boxed border="MEDIUM_DASHED" color="0,0,0">N</boxed> -->
+			</headerDefinition>
+			<headerDefinition>
+				<name>ABI</name>
+				<heading>ABI</heading>
+<!-- 				<textColor>200,200,200</textColor> -->
+<!-- 				<bkgColor>10,10,10</bkgColor> -->
+<!-- 				<valign>CENTER</valign> -->
+<!-- 				<halign>LEFT</halign> -->
+<!-- 				<boxed border="MEDIUM_DASHED" color="0,0,0">Y</boxed> -->
+			</headerDefinition>
+			<headerDefinition>
+				<name>BANCA</name>
+				<heading>Descrizione Bcc</heading>
+<!-- 				<textColor>200,200,200</textColor> -->
+<!-- 				<bkgColor>10,10,10</bkgColor> -->
+<!-- 				<valign>CENTER</valign> -->
+<!-- 				<halign>LEFT</halign> -->
+<!-- 				<boxed border="MEDIUM_DASHED" color="0,0,0">Y</boxed> -->
+			</headerDefinition>
+		</headersDefinition>
+	</headers>
+	<coloumns>
+		<coloumn>
+			<name>CONTO</name>
+			<valign>CENTER</valign>
+			<halign>CENTER</halign>
+			<boxed border="MEDIUM" color="0,0,0">Y</boxed>
+		</coloumn>
+		<coloumn>
+			<name>COD_ISTITUTO</name>
+			<valign>CENTER</valign>
+			<halign>CENTER</halign>
+			<boxed border="MEDIUM" color="0,0,0">Y</boxed>
+		</coloumn>
+		<coloumn>
+			<name>ABI</name>
+			<valign>CENTER</valign>
+			<halign>CENTER</halign>
+			<boxed border="MEDIUM" color="0,0,0">Y</boxed>
+		</coloumn>
+		<coloumn>
+			<name>BANCA</name>
+			<valign>CENTER</valign>
+			<halign>CENTER</halign>
+			<boxed border="MEDIUM" color="0,0,0">Y</boxed>
+		</coloumn>
+	</coloumns>
+</template>

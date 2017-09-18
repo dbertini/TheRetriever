@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/TemplateSchema.xsd">
+	<name>template_001</name>
+	<title>Titolo del template</title>
+	<titleTextColor>0,0,0</titleTextColor>
+	<titleBkgColor>155,155,155</titleBkgColor>
+	<headers>
+		<textColor>255,0,255</textColor>
+		<bkgColor>200,200,200</bkgColor>
+		<valign>BOTTOM</valign>
+		<halign>RIGHT</halign>
+		<boxed border="MEDIUM" color="255,255,0">Y</boxed>
+		<headersDefinition>
+			<headerDefinition>
+				<name>ID_MOVIMENTO</name>
+				<heading>Colonna 1</heading>
+				<textColor>200,200,200</textColor>
+				<bkgColor>10,10,10</bkgColor>
+				<valign>CENTER</valign>
+				<halign>LEFT</halign>
+				<boxed border="SLANTED_DASH_DOT" color="255,125,0">Y</boxed>
+			</headerDefinition>
+			<headerDefinition>
+				<name>ABI</name>
+				<heading>Colonna 2</heading>
+				<textColor>200,200,200</textColor>
+				<bkgColor>10,10,10</bkgColor>
+				<boxed border="MEDIUM_DASHED" color="0,0,0">N</boxed>
+			</headerDefinition>
+			<headerDefinition>
+				<name>DATA_INSERIMENTO</name>
+				<heading>Data Inserimento</heading>
+				<textColor>200,200,200</textColor>
+				<bkgColor>10,10,10</bkgColor>
+				<valign>CENTER</valign>
+				<halign>LEFT</halign>
+				<boxed border="MEDIUM_DASHED" color="0,0,0">Y</boxed>
+			</headerDefinition>
+		</headersDefinition>
+	</headers>
+	<coloumns>
+		<coloumn>
+			<name>ID_MOVIMENTO</name>
+			<textColor>200,200,200</textColor>
+			<bkgColor>47,200,125</bkgColor>
+			<format>###########</format>
+			<valign>CENTER</valign>
+			<halign>RIGHT</halign>
+			<boxed border="MEDIUM" color="255,255,0">Y</boxed>
+		</coloumn>
+		<coloumn>
+			<name>ABI</name>
+			<textColor>200,200,200</textColor>
+			<bkgColor>125,10,234</bkgColor>
+			<format></format>
+			<valign>CENTER</valign>
+			<halign>LEFT</halign>
+			<boxed>N</boxed>
+		</coloumn>
+		<coloumn>
+			<name>DATA_INSERIMENTO</name>
+			<textColor>200,200,200</textColor>
+			<bkgColor>125,10,234</bkgColor>
+			<format>dd/MM/yyyy hh:mm:ss</format>
+			<valign>BOTTOM</valign>
+			<halign>CENTER</halign>
+			<boxed border="MEDIUM_DASH_DOT" color="255,69,0">Y</boxed>
+		</coloumn>
+	</coloumns>
+</template>

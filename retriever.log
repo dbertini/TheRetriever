@@ -1056,3 +1056,147 @@
 19-09-2017 15:35:48.270 [main] INFO  it.db.retriever.Retriever - Starting scheduler............
 19-09-2017 15:35:48.270 [main] INFO  it.db.retriever.Retriever - Scheduler started!
 19-09-2017 15:35:49.812 [main] INFO  it.db.retriever.Retriever - Report Retriver running up on version 3.0.0 !
+19-09-2017 15:46:21.976 [main] INFO  it.db.retriever.Retriever - Retriever is starting.....
+19-09-2017 15:46:21.982 [main] INFO  it.db.retriever.Retriever - ***************** DATASOURCES *****************
+19-09-2017 15:46:21.982 [main] INFO  it.db.retriever.Retriever - Reading datasource configuration
+19-09-2017 15:46:21.987 [main] INFO  it.db.retriever.core.DataSourcesReader - Inizio lettura file datasource
+19-09-2017 15:46:22.051 [main] INFO  it.db.retriever.core.DataSourcesReader - ---------------------------------------
+19-09-2017 15:46:22.212 [main] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for monet
+19-09-2017 15:46:22.212 [main] INFO  it.db.retriever.core.ConnectionProvider - Using driver oracle.jdbc.driver.OracleDriver
+19-09-2017 15:46:22.243 [main] INFO  it.db.retriever.core.ConnectionProvider - Using URL: jdbc:oracle:thin:@sc01-testbccsi-scan.gbi.bcc.it:1521/SO11GSIN
+19-09-2017 15:46:22.243 [main] INFO  it.db.retriever.core.ConnectionProvider - Using username: monet
+19-09-2017 15:46:22.244 [main] INFO  it.db.retriever.core.ConnectionProvider - Password utilizzata: *********
+19-09-2017 15:46:23.037 [main] INFO  it.db.retriever.core.ConnectionProvider - Connection succesfull for datasource monet
+19-09-2017 15:46:23.089 [main] INFO  it.db.retriever.core.DataSourcesReader - Fine lettura file datasource
+19-09-2017 15:46:23.090 [main] INFO  it.db.retriever.Retriever - Datasource configuration read.
+19-09-2017 15:46:23.090 [main] INFO  it.db.retriever.Retriever - ***********************************************
+19-09-2017 15:46:23.090 [main] INFO  it.db.retriever.Retriever - ****************** TEMPLATES ******************
+19-09-2017 15:46:23.090 [main] INFO  it.db.retriever.Retriever - Reading template configuration
+19-09-2017 15:46:23.097 [main] INFO  it.db.retriever.core.TemplateReader - Inizio lettura file template
+19-09-2017 15:46:23.098 [main] INFO  it.db.retriever.core.TemplateReader - ---------------------------------------
+19-09-2017 15:46:23.248 [main] INFO  it.db.retriever.core.TemplateReader - Template template_001 letto correttamente.
+19-09-2017 15:46:23.248 [main] INFO  it.db.retriever.core.TemplateReader - ---------------------------------------
+19-09-2017 15:46:23.292 [main] INFO  it.db.retriever.core.TemplateReader - Template template_base letto correttamente.
+19-09-2017 15:46:23.292 [main] INFO  it.db.retriever.core.TemplateReader - Fine lettura file template
+19-09-2017 15:46:23.292 [main] INFO  it.db.retriever.Retriever - Template configuration read.
+19-09-2017 15:46:23.292 [main] INFO  it.db.retriever.Retriever - ***********************************************
+19-09-2017 15:46:23.293 [main] INFO  it.db.retriever.Retriever - ***************** REPORTS *****************
+19-09-2017 15:46:23.293 [main] INFO  it.db.retriever.Retriever - Reading report configuration
+19-09-2017 15:46:23.299 [main] INFO  it.db.retriever.core.ReportsReader - Inizio lettura file reports
+19-09-2017 15:46:23.301 [main] INFO  it.db.retriever.core.ReportsReader - ---------------------------------------
+19-09-2017 15:46:23.361 [main] INFO  it.db.retriever.core.ReportsReader - Report report1 letto correttamente.
+19-09-2017 15:46:23.361 [main] INFO  it.db.retriever.core.ReportsReader - ---------------------------------------
+19-09-2017 15:46:23.397 [main] INFO  it.db.retriever.core.ReportsReader - Report report2 letto correttamente.
+19-09-2017 15:46:23.398 [main] INFO  it.db.retriever.core.ReportsReader - Fine lettura file reports
+19-09-2017 15:46:23.398 [main] INFO  it.db.retriever.Retriever - Report configuration read.
+19-09-2017 15:46:23.398 [main] INFO  it.db.retriever.Retriever - ***********************************************
+19-09-2017 15:46:23.398 [main] INFO  it.db.retriever.Retriever - ***************** WEBSERVER *****************
+19-09-2017 15:46:23.404 [main] INFO  it.db.retriever.Retriever - *********************************************
+19-09-2017 15:46:23.414 [Thread-2] INFO  it.db.retriever.Retriever - Starting Retriever WebServer
+19-09-2017 15:46:23.560 [main] INFO  it.db.retriever.Retriever - ****************** SCHEDULER ******************
+19-09-2017 15:46:23.567 [main] INFO  it.db.retriever.Retriever - -----------------------------------------------------
+19-09-2017 15:46:23.568 [ForkJoinPool.commonPool-worker-1] INFO  it.db.retriever.Retriever - -----------------------------------------------------
+19-09-2017 15:46:23.568 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione del report report2
+19-09-2017 15:46:23.569 [ForkJoinPool.commonPool-worker-1] INFO  it.db.retriever.Retriever - Inizio schedulazione del report report1
+19-09-2017 15:46:23.592 [main] INFO  it.db.retriever.Retriever - Schedulazione del report report2 andata a buon fine.
+19-09-2017 15:46:23.592 [ForkJoinPool.commonPool-worker-1] INFO  it.db.retriever.Retriever - Schedulazione del report report1 andata a buon fine.
+19-09-2017 15:46:23.593 [main] INFO  it.db.retriever.Retriever - ***********************************************
+19-09-2017 15:46:23.593 [main] INFO  it.db.retriever.Retriever - ****************** SYSTEM SCHEDULER ******************
+19-09-2017 15:46:23.593 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+19-09-2017 15:46:23.594 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo DataSources
+19-09-2017 15:46:23.602 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo DataSources effettuata correttamente con la definizione: '0 0,15,30,45 * ? * *'
+19-09-2017 15:46:23.602 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+19-09-2017 15:46:23.602 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo Template
+19-09-2017 15:46:23.610 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo template effettuata correttamente con la definizione: '0 2,17,32,47 * ? * *'
+19-09-2017 15:46:23.610 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+19-09-2017 15:46:23.610 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo Report
+19-09-2017 15:46:23.621 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo Report effettuata correttamente con la definizione: '0 4,19,34,49 * ? * *'
+19-09-2017 15:46:23.621 [main] INFO  it.db.retriever.Retriever - ******************************************************
+19-09-2017 15:46:23.621 [main] INFO  it.db.retriever.Retriever - Starting scheduler............
+19-09-2017 15:46:23.622 [main] INFO  it.db.retriever.Retriever - Scheduler started!
+19-09-2017 15:46:25.565 [main] INFO  it.db.retriever.Retriever - Report Retriver running up on version 4.0.0 !
+19-09-2017 15:47:00.005 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - ---------------------------------------------------------
+19-09-2017 15:47:00.006 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - Inizio esecuzione job di controllo dei Template
+19-09-2017 15:47:00.007 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - ---------------------------------------
+19-09-2017 15:47:00.050 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - Template template_001 gia' definito
+19-09-2017 15:47:00.051 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - ---------------------------------------
+19-09-2017 15:47:00.092 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - Template template_base gia' definito
+19-09-2017 15:47:00.095 [QuartzScheduler_Worker-1] WARN  it.db.retriever.jobs.CheckTemplateJob - Il report report1 fa' riferimento al template template_001 non più presente tra quelli definiti, si utilizzerà quello di default.
+19-09-2017 15:47:00.096 [QuartzScheduler_Worker-1] WARN  it.db.retriever.jobs.CheckTemplateJob - Il report report2 fa' riferimento al template template_001 non più presente tra quelli definiti, si utilizzerà quello di default.
+19-09-2017 15:47:00.096 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - Template presenti dopo il controllo: 
+19-09-2017 15:47:00.096 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - - template_001
+19-09-2017 15:47:00.097 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - - template_base
+19-09-2017 15:47:00.097 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - Job di controllo dei Template eseguito correttamente
+19-09-2017 15:47:00.097 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - ---------------------------------------------------------
+19-09-2017 15:48:41.897 [main] INFO  it.db.retriever.Retriever - Retriever is starting.....
+19-09-2017 15:48:41.905 [main] INFO  it.db.retriever.Retriever - ***************** DATASOURCES *****************
+19-09-2017 15:48:41.905 [main] INFO  it.db.retriever.Retriever - Reading datasource configuration
+19-09-2017 15:48:41.907 [main] INFO  it.db.retriever.core.DataSourcesReader - Inizio lettura file datasource
+19-09-2017 15:48:41.987 [main] INFO  it.db.retriever.core.DataSourcesReader - ---------------------------------------
+19-09-2017 15:48:42.131 [main] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for monet
+19-09-2017 15:48:42.132 [main] INFO  it.db.retriever.core.ConnectionProvider - Using driver oracle.jdbc.driver.OracleDriver
+19-09-2017 15:48:42.188 [main] INFO  it.db.retriever.core.ConnectionProvider - Using URL: jdbc:oracle:thin:@sc01-testbccsi-scan.gbi.bcc.it:1521/SO11GSIN
+19-09-2017 15:48:42.188 [main] INFO  it.db.retriever.core.ConnectionProvider - Using username: monet
+19-09-2017 15:48:42.189 [main] INFO  it.db.retriever.core.ConnectionProvider - Password utilizzata: *********
+19-09-2017 15:48:42.978 [main] INFO  it.db.retriever.core.ConnectionProvider - Connection succesfull for datasource monet
+19-09-2017 15:48:43.021 [main] INFO  it.db.retriever.core.DataSourcesReader - Fine lettura file datasource
+19-09-2017 15:48:43.021 [main] INFO  it.db.retriever.Retriever - Datasource configuration read.
+19-09-2017 15:48:43.021 [main] INFO  it.db.retriever.Retriever - ***********************************************
+19-09-2017 15:48:43.021 [main] INFO  it.db.retriever.Retriever - ****************** TEMPLATES ******************
+19-09-2017 15:48:43.022 [main] INFO  it.db.retriever.Retriever - Reading template configuration
+19-09-2017 15:48:43.023 [main] INFO  it.db.retriever.core.TemplateReader - Inizio lettura file template
+19-09-2017 15:48:43.024 [main] INFO  it.db.retriever.core.TemplateReader - ---------------------------------------
+19-09-2017 15:48:43.120 [main] INFO  it.db.retriever.core.TemplateReader - Template template_001 letto correttamente.
+19-09-2017 15:48:43.120 [main] INFO  it.db.retriever.core.TemplateReader - ---------------------------------------
+19-09-2017 15:48:43.166 [main] INFO  it.db.retriever.core.TemplateReader - Template template_base letto correttamente.
+19-09-2017 15:48:43.166 [main] INFO  it.db.retriever.core.TemplateReader - Fine lettura file template
+19-09-2017 15:48:43.166 [main] INFO  it.db.retriever.Retriever - Template configuration read.
+19-09-2017 15:48:43.167 [main] INFO  it.db.retriever.Retriever - ***********************************************
+19-09-2017 15:48:43.167 [main] INFO  it.db.retriever.Retriever - ***************** REPORTS *****************
+19-09-2017 15:48:43.167 [main] INFO  it.db.retriever.Retriever - Reading report configuration
+19-09-2017 15:48:43.168 [main] INFO  it.db.retriever.core.ReportsReader - Inizio lettura file reports
+19-09-2017 15:48:43.169 [main] INFO  it.db.retriever.core.ReportsReader - ---------------------------------------
+19-09-2017 15:48:43.209 [main] INFO  it.db.retriever.core.ReportsReader - Report report1 letto correttamente.
+19-09-2017 15:48:43.209 [main] INFO  it.db.retriever.core.ReportsReader - ---------------------------------------
+19-09-2017 15:48:43.250 [main] INFO  it.db.retriever.core.ReportsReader - Report report2 letto correttamente.
+19-09-2017 15:48:43.251 [main] INFO  it.db.retriever.core.ReportsReader - Fine lettura file reports
+19-09-2017 15:48:43.251 [main] INFO  it.db.retriever.Retriever - Report configuration read.
+19-09-2017 15:48:43.251 [main] INFO  it.db.retriever.Retriever - ***********************************************
+19-09-2017 15:48:43.251 [main] INFO  it.db.retriever.Retriever - ***************** WEBSERVER *****************
+19-09-2017 15:48:43.253 [main] INFO  it.db.retriever.Retriever - *********************************************
+19-09-2017 15:48:43.258 [Thread-2] INFO  it.db.retriever.Retriever - Starting Retriever WebServer
+19-09-2017 15:48:43.421 [main] INFO  it.db.retriever.Retriever - ****************** SCHEDULER ******************
+19-09-2017 15:48:43.428 [main] INFO  it.db.retriever.Retriever - -----------------------------------------------------
+19-09-2017 15:48:43.428 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione del report report2
+19-09-2017 15:48:43.428 [ForkJoinPool.commonPool-worker-1] INFO  it.db.retriever.Retriever - -----------------------------------------------------
+19-09-2017 15:48:43.429 [ForkJoinPool.commonPool-worker-1] INFO  it.db.retriever.Retriever - Inizio schedulazione del report report1
+19-09-2017 15:48:43.453 [main] INFO  it.db.retriever.Retriever - Schedulazione del report report2 andata a buon fine.
+19-09-2017 15:48:43.453 [ForkJoinPool.commonPool-worker-1] INFO  it.db.retriever.Retriever - Schedulazione del report report1 andata a buon fine.
+19-09-2017 15:48:43.453 [main] INFO  it.db.retriever.Retriever - ***********************************************
+19-09-2017 15:48:43.453 [main] INFO  it.db.retriever.Retriever - ****************** SYSTEM SCHEDULER ******************
+19-09-2017 15:48:43.453 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+19-09-2017 15:48:43.454 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo DataSources
+19-09-2017 15:48:43.456 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo DataSources effettuata correttamente con la definizione: '0 0,15,30,45 * ? * *'
+19-09-2017 15:48:43.457 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+19-09-2017 15:48:43.457 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo Template
+19-09-2017 15:48:43.461 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo template effettuata correttamente con la definizione: '0 2,17,32,47 * ? * *'
+19-09-2017 15:48:43.462 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+19-09-2017 15:48:43.462 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo Report
+19-09-2017 15:48:43.465 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo Report effettuata correttamente con la definizione: '0 4,19,34,49 * ? * *'
+19-09-2017 15:48:43.467 [main] INFO  it.db.retriever.Retriever - ******************************************************
+19-09-2017 15:48:43.467 [main] INFO  it.db.retriever.Retriever - Starting scheduler............
+19-09-2017 15:48:43.468 [main] INFO  it.db.retriever.Retriever - Scheduler started!
+19-09-2017 15:48:45.181 [main] INFO  it.db.retriever.Retriever - Report Retriver running up on version 4.0.0 !
+19-09-2017 15:49:00.007 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckReportJob - ---------------------------------------------------------
+19-09-2017 15:49:00.007 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckReportJob - Inizio esecuzione del job di controllo dei Report
+19-09-2017 15:49:00.008 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckReportJob - Inizio lettura dei file report
+19-09-2017 15:49:00.010 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckReportJob - ---------------------------------------
+19-09-2017 15:49:00.041 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckReportJob - Report con nome report1 presente nel file report.xml e' gia' stato definito in precedenza!
+19-09-2017 15:49:00.045 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckReportJob - ---------------------------------------
+19-09-2017 15:49:00.070 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckReportJob - Report con nome report2 presente nel file report2.xml e' gia' stato definito in precedenza!
+19-09-2017 15:49:00.071 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckReportJob - File report letti correttamente.
+19-09-2017 15:49:00.074 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckReportJob - Report presenti dopo il controllo: 
+19-09-2017 15:49:00.075 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckReportJob -  - report1
+19-09-2017 15:49:00.075 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckReportJob -  - report2
+19-09-2017 15:49:00.075 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckReportJob - Fine esecuzione del job di controllo dei Report
+19-09-2017 15:49:00.076 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckReportJob - ---------------------------------------------------------

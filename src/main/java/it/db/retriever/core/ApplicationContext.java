@@ -30,6 +30,8 @@ public enum ApplicationContext {
 	
 	// oggetto che tiene lo scheduling
 	private Scheduler scheduler;
+	
+	private Properties configuration;
 
 	private ApplicationContext() {
 		//inizializzazione delle variabili
@@ -215,5 +217,13 @@ public enum ApplicationContext {
 	 */
 	public List<Template> getTemplates() {
 		return this.templates;
+	}
+	
+	public void setConfiguration(Properties aConfiguration) {
+		this.configuration = aConfiguration;
+	}
+	
+	public Properties getConfiguration() {
+		return this.configuration;
 	}
 }

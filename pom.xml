@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.bcc.sinergia</groupId>
 	<artifactId>reportretriever</artifactId>
-	<version>3.0.0</version>
-	<name>SineReport</name>
+	<version>4.0.0</version>
+	<name>Report Retriever</name>
 	<description>jar</description>
 	<organization>
-		<name>Sinergia scarl</name>
-		<url>www.sinergia.bcc.it</url>
+		<name>David Bertini</name>
+		<url>https://www.linkedin.com/in/david-bertini-23420647/</url>
 	</organization>
 	<properties>
 		<quartz.version>2.2.1</quartz.version>

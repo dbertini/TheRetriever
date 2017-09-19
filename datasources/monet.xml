@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="DataSourceSchema.xsd">
+	<name>monet</name>
+	<description>Datasource di sviluppo schema MONET</description>
+	<url>jdbc:oracle:thin:@sc01-testbccsi-scan.gbi.bcc.it:1521/SO11GSIN</url>
+	<username>monet</username>
+	<password>tr9y6wtr</password>
+	<driver>oracle.jdbc.driver.OracleDriver</driver>
+</dataSource>

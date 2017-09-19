@@ -1,5 +1,5 @@
 package it.db.retriever.utils;
 
 public class Version {
-	public static final String version = "3.0.0";
+	public static final String version = "4.0.0";
 }

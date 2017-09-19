@@ -23,6 +23,7 @@ import it.db.retriever.jobs.ReportJob;
 import it.db.retriever.utils.RunningUtils;
 import it.db.retriever.utils.StandardParameter;
 import it.db.retriever.utils.Version;
+import it.db.retriever.webserver.RetrieverServer;
 
 public class Retriever {
 
@@ -90,6 +91,16 @@ public class Retriever {
 		rr.initReports();
 		LogManager.getLogger(Retriever.class).info("Report configuration read.");
 		LogManager.getLogger(Retriever.class).info("***********************************************");
+
+		LogManager.getLogger(Retriever.class).info("***************** WEBSERVER *****************");
+		new Thread()
+		{
+		    public void run() {
+		    	RetrieverServer.startServerRetriver(2222);
+		    }
+		}.start();
+		LogManager.getLogger(Retriever.class).info("*********************************************");
+
 	}
 
 	/**

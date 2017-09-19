@@ -13,6 +13,7 @@ import org.quartz.SchedulerException;
 import org.quartz.Trigger;
 
 import it.db.retriever.core.ApplicationContext;
+import it.db.retriever.core.ConfigurationReader;
 import it.db.retriever.core.DataSourcesReader;
 import it.db.retriever.core.ReportsReader;
 import it.db.retriever.core.TemplateReader;
@@ -69,6 +70,9 @@ public class Retriever {
 
 	private void init() {
 		LogManager.getLogger(Retriever.class).info("Retriever is starting.....");
+		
+		ConfigurationReader.loadConfiguration();
+		
 
 		LogManager.getLogger(Retriever.class).info("***************** DATASOURCES *****************");
 		LogManager.getLogger(Retriever.class).info("Reading datasource configuration");

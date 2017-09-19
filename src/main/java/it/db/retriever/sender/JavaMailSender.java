@@ -15,18 +15,20 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import it.db.retriever.core.ApplicationContext;
+
 public class JavaMailSender implements ReportSenderInterface {
 
 	@Override
 	public void sendMailWithAttachments(String aSubject, String aHTMLMessage, String aRecipients, String aCcList,
 			String aCcnList, String aNameFileAttachment) {
 
-		String username = "xxxxxxxxxxx@gmail.com";
-		String password = "password";
+		String username = ApplicationContext.INSTANCE.getConfiguration().getProperty("sender.username");
+		String password = ApplicationContext.INSTANCE.getConfiguration().getProperty("sender.password");
 
 		String to = aRecipients;
-		String from = "the.retriever@gmail.com";
-		String host = "smtp.gmail.com";
+		String from = ApplicationContext.INSTANCE.getConfiguration().getProperty("sender.username");
+		String host = ApplicationContext.INSTANCE.getConfiguration().getProperty("sender.smtp.server");
 		String filename = aNameFileAttachment;
 
 		String msgText1 = aHTMLMessage;
@@ -36,7 +38,7 @@ public class JavaMailSender implements ReportSenderInterface {
 		Properties props = new Properties();
 		props.put("mail.smtp.starttls.enable", true); // added this line
 		props.put("mail.smtp.host", host);
-		props.put("mail.smtp.port", "587");
+		props.put("mail.smtp.port", ApplicationContext.INSTANCE.getConfiguration().getProperty("sender.smtp.port"));
 		props.put("mail.smtp.auth", true);
 
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {

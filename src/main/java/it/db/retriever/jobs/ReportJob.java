@@ -15,6 +15,7 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
+import it.db.retriever.core.ApplicationContext;
 import it.db.retriever.core.QueryManager;
 import it.db.retriever.core.configuration.entity.QueryResponse;
 import it.db.retriever.core.configuration.entity.Report;
@@ -129,11 +130,7 @@ public class ReportJob implements Job {
 		try {
 			LogManager.getLogger(ReportJob.class).info("Invio mail generato per il report " + this.report.getName());
 			// Preparo l'oggetto per l'invio della mail tramite exchange
-			//TODO: modificare il corretto IF
-//			SendMailActions act = new SendMailActions(StandardParameter.EXCHANGE_USERNAME,
-//					StandardParameter.EXCHANGE_PASSWORD, ExchangeVersion.Exchange2010_SP2,
-//					StandardParameter.EXCHANGE_USERNAME);
-			ReportSenderInterface act = new JavaMailSender();
+			ReportSenderInterface act = (ReportSenderInterface) Class.forName(ApplicationContext.INSTANCE.getConfiguration().getProperty("sender.class")).newInstance();
 			// invio della mail con allegato
 			SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
 			String HTMLBody = this.report.getDescription() + " <br/> Report generato in data <b>" + fmt.format(new java.util.Date()) + "</b>";

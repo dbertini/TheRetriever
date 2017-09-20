@@ -62,13 +62,6 @@ public class CsvExcelExporter implements ExportInterface {
 							} else {
 								rowStr = rowStr + "" + ";";
 							}
-						} else if( aQueryResponse.getColoumnType().get(i) == java.sql.Types.INTEGER) {
-							if(row.getColoumn().get(i) != null) {
-								BigInteger bd = (BigInteger)row.getColoumn().get(i);
-								rowStr = rowStr + "=\"" + bd.toString() + "\";";
-							} else {
-								rowStr = rowStr + "" + ";";
-							}
 						} else if( aQueryResponse.getColoumnType().get(i) == java.sql.Types.VARCHAR) {
 							
 							if(row.getColoumn().get(i) != null) {

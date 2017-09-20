@@ -4,13 +4,13 @@
 	<name>report1</name>
 	<datasource>monet</datasource>
 	<sql>
-		select now()
+		select * from movimenti_posizioni where ndg = 3141
 	</sql>
-	<cron>00 31 12 ? * MON,TUE,WED,THU,FRI</cron>
+	<cron>00 46 09 ? * MON,TUE,WED,THU,FRI</cron>
 	<description>Report estrazione data</description>
 	<recipient>david.bertini@gmail.com</recipient>
-	<cclist>david.bertini@gmail.com</cclist>
-	<ccnlist>david.bertini@gmail.com</ccnlist>
+<!-- 	<cclist>david.bertini@gmail.com</cclist> -->
+<!-- 	<ccnlist>david.bertini@gmail.com</ccnlist> -->
 	<export>EXCEL</export>
-	<template>template_001</template>
+<!-- 	<template>template_001</template> -->
 </report>

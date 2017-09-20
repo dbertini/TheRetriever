@@ -1,7 +1,10 @@
 package it.db.retriever.sender;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -15,13 +18,15 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import org.apache.logging.log4j.LogManager;
+
 import it.db.retriever.core.ApplicationContext;
 
 public class JavaMailSender implements ReportSenderInterface {
 
 	@Override
 	public void sendMailWithAttachments(String aSubject, String aHTMLMessage, String aRecipients, String aCcList,
-			String aCcnList, String aNameFileAttachment) {
+			String aCcnList, String... aAttachmentsFile)  throws Exception {
 
 		String username = ApplicationContext.INSTANCE.getConfiguration().getProperty("sender.username");
 		String password = ApplicationContext.INSTANCE.getConfiguration().getProperty("sender.password");
@@ -29,7 +34,7 @@ public class JavaMailSender implements ReportSenderInterface {
 		String to = aRecipients;
 		String from = ApplicationContext.INSTANCE.getConfiguration().getProperty("sender.username");
 		String host = ApplicationContext.INSTANCE.getConfiguration().getProperty("sender.smtp.server");
-		String filename = aNameFileAttachment;
+		//String filename = aNameFileAttachment;
 
 		String msgText1 = aHTMLMessage;
 		String subject = aSubject;
@@ -46,9 +51,6 @@ public class JavaMailSender implements ReportSenderInterface {
 				return new PasswordAuthentication(username, password);
 			}
 		});
-
-		// Session session = Session.getInstance(props, null);
-
 		try {
 			// create a message
 			MimeMessage msg = new MimeMessage(session);
@@ -68,13 +70,23 @@ public class JavaMailSender implements ReportSenderInterface {
 			Multipart mp = new MimeMultipart();
 
 			mp.addBodyPart(mbp1);
-			if (filename != null) {
-				// create the second message part
-				MimeBodyPart mbp2 = new MimeBodyPart();
 
-				// attach the file to the message
-				mbp2.attachFile(filename);
-				mp.addBodyPart(mbp2);
+			if (aAttachmentsFile != null && aAttachmentsFile.length > 0) {
+				List<String> attachemente = new ArrayList<String>();
+				Collections.addAll(attachemente, aAttachmentsFile);
+				
+				attachemente.stream().forEachOrdered(att -> {
+					// create the second message part
+					MimeBodyPart mbp2 = new MimeBodyPart();
+					// attach the file to the message
+					try {
+						mbp2.attachFile(att);
+						mp.addBodyPart(mbp2);
+					} catch (IOException | MessagingException e) {
+						LogManager.getLogger(JavaMailSender.class).error("Errore durante il processo di allegamento del file: " + att);
+						LogManager.getLogger(JavaMailSender.class).error(e);
+					}
+				});
 			}
 
 			// add the Multipart to the message
@@ -88,13 +100,11 @@ public class JavaMailSender implements ReportSenderInterface {
 			transport.sendMessage(msg, msg.getAllRecipients());
 
 		} catch (MessagingException mex) {
-			mex.printStackTrace();
+			LogManager.getLogger(JavaMailSender.class).error(mex);
 			Exception ex = null;
 			if ((ex = mex.getNextException()) != null) {
-				ex.printStackTrace();
+				LogManager.getLogger(JavaMailSender.class).error(ex);
 			}
-		} catch (IOException ioex) {
-			ioex.printStackTrace();
 		}
 	}
 }

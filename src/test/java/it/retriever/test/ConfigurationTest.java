@@ -9,7 +9,12 @@ public class ConfigurationTest {
 	@Test
 	public void configurationTest() {
 		
-		ConfigurationReader.loadConfiguration();
+		try {
+			ConfigurationReader.loadConfiguration();
+		} catch (Exception e) {
+			e.printStackTrace();
+			assert(false);
+		}
 		assert(true);
 	}
 }

@@ -68,12 +68,16 @@ public class Retriever {
 		LogManager.getLogger(Retriever.class).info("Report Retriver running up on version " + Version.version + " !");
 	}
 
-	private void init() {
+	private void init() throws Exception {
 		LogManager.getLogger(Retriever.class).info("Retriever is starting.....");
-		
+		LogManager.getLogger(Retriever.class).info("**************** CONFIGURATION ****************");
+		LogManager.getLogger(Retriever.class).info("Reading retriever configuration file");
 		ConfigurationReader.loadConfiguration();
-		
+		LogManager.getLogger(Retriever.class).info("Retriever configuration file read.");
+		LogManager.getLogger(Retriever.class).info("***********************************************");
 
+		
+		
 		LogManager.getLogger(Retriever.class).info("***************** DATASOURCES *****************");
 		LogManager.getLogger(Retriever.class).info("Reading datasource configuration");
 		DataSourcesReader dsr = new DataSourcesReader();

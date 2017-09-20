@@ -37,16 +37,7 @@ public class StandardParameter {
 	 * Nome standard del gruppo al quale sono associati tutti i report di sistema
 	 */
 	public static final String SYSTEM_GROUP = "systemgroup";
-	
-	/**
-	 * Username di servizio per l'invio delle email tramite Exchange
-	 */
-	public static final String EXCHANGE_USERNAME = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-	/**
-	 * Password di servizio per l'invio delle email tramite Exchange
-	 */
-	public static final String EXCHANGE_PASSWORD = "XXXXXXXXXXXXXXXXXXX";
-	
+
 	/**
 	 * Directory dove verranno creati temporaneamente i reort da inviare
 	 */

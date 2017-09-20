@@ -9,10 +9,10 @@ package it.db.retriever.exporter;
  *
  */
 public enum ExportType {
-	CSV("CSV","it.bcc.sinergia.retriever.exporter.CsvExporter"), 
-	XML("XML","it.bcc.sinergia.retriever.exporter.XmlExport"),
-	CSVEXCEL("CSVEXCEL","it.bcc.sinergia.retriever.exporter.CsvExcelExporter"),
-	EXCEL("EXCEL","it.bcc.sinergia.retriever.exporter.ExcelExporter");
+	CSV("CSV","it.db.retriever.exporter.CsvExporter"), 
+	XML("XML","it.db.retriever.exporter.XmlExport"),
+	CSVEXCEL("CSVEXCEL","it.db.retriever.exporter.CsvExcelExporter"),
+	EXCEL("EXCEL","it.db.retriever.exporter.ExcelExporter");
 
 	private final String text;
 	private final String classname;

@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -59,6 +60,13 @@ public class CsvExporter implements ExportInterface {
 							if(row.getColoumn().get(i) != null) {
 								BigDecimal bd = (BigDecimal)row.getColoumn().get(i);
 								rowStr = rowStr + bd.toString() + ";";
+							} else {
+								rowStr = rowStr + "" + ";";
+							}
+						} else if( aQueryResponse.getColoumnType().get(i) == java.sql.Types.INTEGER) {
+							if(row.getColoumn().get(i) != null) {
+								BigInteger in = (BigInteger)row.getColoumn().get(i);
+								rowStr = rowStr + in.intValue() + ";";
 							} else {
 								rowStr = rowStr + "" + ";";
 							}

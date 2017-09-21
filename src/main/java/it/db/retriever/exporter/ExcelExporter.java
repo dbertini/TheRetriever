@@ -2,6 +2,7 @@ package it.db.retriever.exporter;
 
 import java.io.FileOutputStream;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.util.Date;
@@ -126,6 +127,13 @@ public class ExcelExporter implements ExportInterface {
 						if (row.getColoumn().get(i) != null) {
 							BigDecimal bd = (BigDecimal) row.getColoumn().get(i);
 							rcell.setCellValue(bd.doubleValue());
+						} else {
+							rcell.setCellValue("");
+						}
+					} else if (aQueryResponse.getColoumnType().get(i) == java.sql.Types.INTEGER) {
+						if (row.getColoumn().get(i) != null) {
+							BigInteger in = (BigInteger) row.getColoumn().get(i);
+							rcell.setCellValue(in.intValue());
 						} else {
 							rcell.setCellValue("");
 						}
@@ -547,6 +555,34 @@ public class ExcelExporter implements ExportInterface {
 								//si inserisce come normale numero
 								BigDecimal bd = (BigDecimal) row.getColoumn().get(i);
 								rcell.setCellValue(bd.doubleValue());
+							}
+						} else {
+							rcell.setCellValue("");
+						}
+					} else if (aQueryResponse.getColoumnType().get(i) == java.sql.Types.INTEGER) {
+						if (row.getColoumn().get(i) != null) {
+							
+							//si controlla se è stato scelta una formattazione 
+							//per il tipo di dato numerico
+							if(colDef!=null && colDef.getFormat() !=null && !colDef.getFormat().trim().equalsIgnoreCase("")) {
+								try {
+									//si è scelta una formattazione per il numero
+									//quindi si prova ad applicarla
+									DecimalFormat myFormatter = new DecimalFormat(colDef.getFormat().trim());
+									rcell.setCellValue(myFormatter.format(row.getColoumn().get(i)));
+								} catch (Exception e) {
+									LogManager.getLogger(ExcelExporter.class).warn("Errore durante la formattazione del valore numerico per il campo: " + aQueryResponse.getLabels().get(i) + " valore utilizzato: " + colDef.getFormat().trim());
+									LogManager.getLogger(ExcelExporter.class).warn(e);
+									//in caso di formattazione non corretta
+									//inserisco il valore come normale numero
+									BigInteger in = (BigInteger) row.getColoumn().get(i);
+									rcell.setCellValue(in.intValue());
+								}
+							} else {
+								//la formattazione non è stata scelta, quindi 
+								//si inserisce come normale numero
+								BigInteger in = (BigInteger) row.getColoumn().get(i);
+								rcell.setCellValue(in.intValue());
 							}
 						} else {
 							rcell.setCellValue("");

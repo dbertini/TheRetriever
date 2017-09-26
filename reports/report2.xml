@@ -2,7 +2,7 @@
 <!DOCTYPE report>
 <report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ReportSchema.xsd">
 	<name>report2</name>
-	<datasource>monet</datasource>
+	<datasource>postgres</datasource>
 	<sql>
 		select now()
 	</sql>
@@ -11,6 +11,6 @@
 	<recipient>david.bertini@gmail.com</recipient>
 	<cclist>david.bertini@gmail.com</cclist>
 	<ccnlist>david.bertini@gmail.com</ccnlist>
-	<export>CSV</export>
+	<export>EXCEL</export>
 	<template>template_001</template>
 </report>

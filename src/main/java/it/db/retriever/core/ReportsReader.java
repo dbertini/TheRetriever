@@ -75,7 +75,7 @@ public class ReportsReader {
 
 			// converzione da XML ad oggetto DataSource
 			Report report = (Report) jaxbUnmarshaller.unmarshal(aFile);
-
+			report.setFilname(aFile.getName());
 			// controllo se il report sia già stato definito in altri file per errore
 			if (ApplicationContext.INSTANCE.isReportPresent(report.getName())) {
 				LogManager.getLogger(ReportsReader.class).error("Attenzione il report con nome " + report.getName()

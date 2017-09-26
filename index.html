@@ -6,17 +6,32 @@
 </head>
 <body>
 	<ul>
-		<li><a href="http://localhost:2222/api/info/version">Versione del software</a></li>
+		<li><a href="http://localhost:2222/api/info/version">Versione
+				del software</a></li>
 		<li><a href="http://localhost:2222/api/info/configuration">Configurazioni</a></li>
 	</ul>
-	<BR/>
-	<BR/>
+	<BR />
+	<BR />
 	<ul>
-		<li><a href="http://localhost:2222/api/reports/reportList">Lista dei Report presenti</a></li>
-		<li><a href="http://localhost:2222/api/reports/reportDetail/report1">Dettaglio di uno specifico report</a></li>
+		<li><a href="http://localhost:2222/api/reports/reportList">Lista
+				dei Report presenti</a></li>
+		<li><a
+			href="http://localhost:2222/api/reports/reportDetail/report1">Dettaglio
+				di uno specifico report</a></li>
 		<li></li>
-		<li><a href="http://localhost:2222/api/datasources/datasourceList">Lista dei Datasource presenti</a></li>
-		<li><a href="http://localhost:2222/api/templates/templateList">Lista dei Template presenti</a></li>
+		<li><a
+			href="http://localhost:2222/api/datasources/datasourceList">Lista
+				dei Datasource presenti</a></li>
+		<li><a href="http://localhost:2222/api/templates/templateList">Lista
+				dei Template presenti</a></li>
 	</ul>
+	<BR />
+	<BR />
+	<h1>Form di modifica report</h1>
+	<form action="http://localhost:2222/api/reports/editreport"
+		method="post">
+		Nome del report: <input type="text" name="reportname" id="reportname"/> <input
+			type="submit" value="Modifica">
+	</form>
 </body>
 </html>

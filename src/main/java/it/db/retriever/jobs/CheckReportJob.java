@@ -231,7 +231,7 @@ public class CheckReportJob implements Job {
 
 			// converzione da XML ad oggetto DataSource
 			Report report = (Report) jaxbUnmarshaller.unmarshal(aFile);
-
+			report.setFilname(aFile.getName());
 			// controllo se il report sia già stato definito in altri file per errore
 			if (ApplicationContext.INSTANCE.isReportPresent(report.getName())) {
 				LogManager.getLogger(CheckReportJob.class).info("Report con nome " + report.getName()

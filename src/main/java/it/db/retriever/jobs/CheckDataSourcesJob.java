@@ -112,12 +112,14 @@ public class CheckDataSourcesJob implements Job {
 			this.schema = new FileInputStream(
 					StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.DATASOURCES_SCHEMA);
 			// controllo sulla validità dell'XML del report
-			if (!XmlUtils.validateXml(new FileInputStream(aFile), this.schema)) {
+			FileInputStream theFile = new FileInputStream(aFile);
+			if (!XmlUtils.validateXml(theFile, this.schema)) {
 				LogManager.getLogger(CheckDataSourcesJob.class).error("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei datasource.");
 				throw new Exception("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei datasource.");
 			}
+			theFile.close();
 			this.schema.close();
 
 			// instazio il marshaller con il tipo di oggetto della classe

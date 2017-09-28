@@ -58,14 +58,14 @@ public class TemplateReader {
 					StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.TEMPLATE_SCHEMA);
 
 			// controllo sulla validità dell'XML del report
-
-			if (!XmlUtils.validateXml(new FileInputStream(aFile), this.schema)) {
+			FileInputStream theFile = new FileInputStream(aFile);
+			if (!XmlUtils.validateXml(theFile, this.schema)) {
 				LogManager.getLogger(TemplateReader.class).error("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei template.");
 				throw new Exception("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei template.");
 			}
-
+			theFile.close();
 			this.schema.close();
 			
 			// instazio il marshaller con il tipo di oggetto della classe

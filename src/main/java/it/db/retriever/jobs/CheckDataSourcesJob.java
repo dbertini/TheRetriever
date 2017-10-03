@@ -3,7 +3,9 @@ package it.db.retriever.jobs;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,7 @@ import org.quartz.JobExecutionException;
 
 import it.db.retriever.core.ApplicationContext;
 import it.db.retriever.core.ConnectionProvider;
+import it.db.retriever.core.ReportsReader;
 import it.db.retriever.core.configuration.entity.DataSource;
 import it.db.retriever.utils.RunningUtils;
 import it.db.retriever.utils.StandardParameter;
@@ -46,8 +49,26 @@ public class CheckDataSourcesJob implements Job {
 					.info("---------------------------------------------------------");
 			LogManager.getLogger(CheckDataSourcesJob.class).info("Inizio esecuzione job di controllo dei DataSources");
 			this.newDataSources = new ArrayList<>();
-			Files.newDirectoryStream(Paths.get(StandardParameter.DATASOURCE_PATH),
-					path -> path.toString().endsWith(".xml")).forEach(a -> readFile(a.toFile()));
+
+			DirectoryStream<Path> stream = null;
+
+			try {
+				DirectoryStream.Filter<Path> filter = new DirectoryStream.Filter<Path>() {
+					public boolean accept(Path file) throws IOException {
+						return (file.toString().endsWith(".xml"));
+					}
+				};
+				Path dir = Paths.get(StandardParameter.DATASOURCE_PATH);
+				stream = Files.newDirectoryStream(dir, filter);
+				stream.forEach(a -> readFile(a.toFile()));
+			} catch (Exception e) {
+				LogManager.getLogger(ReportsReader.class).error(e);
+			} finally {
+				stream.close();
+			}
+
+			// Files.newDirectoryStream(Paths.get(StandardParameter.DATASOURCE_PATH),
+			// path -> path.toString().endsWith(".xml")).forEach(a -> readFile(a.toFile()));
 
 			// dopo aver recuperato la lista dei datasouces presenti
 			// e funzionanti nella directory si controlla
@@ -93,8 +114,8 @@ public class CheckDataSourcesJob implements Job {
 		LogManager.getLogger(CheckDataSourcesJob.class).info("Job di controllo dei DataSources eseguito correttamente");
 		LogManager.getLogger(CheckDataSourcesJob.class)
 				.info("---------------------------------------------------------");
-		
-		//ri-scrivo il report con  report e datasource attivi
+
+		// ri-scrivo il report con report e datasource attivi
 		RunningUtils.writeRunningReport();
 	}
 

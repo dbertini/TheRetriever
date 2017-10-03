@@ -8,7 +8,9 @@ import static org.quartz.TriggerBuilder.newTrigger;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,6 +29,7 @@ import org.quartz.SchedulerException;
 import org.quartz.Trigger;
 
 import it.db.retriever.core.ApplicationContext;
+import it.db.retriever.core.ReportsReader;
 import it.db.retriever.core.configuration.entity.Report;
 import it.db.retriever.exporter.ExportType;
 import it.db.retriever.utils.RunningUtils;
@@ -43,7 +46,7 @@ import it.db.retriever.utils.XmlUtils;
 public class CheckReportJob implements Job {
 
 	private List<Report> newReports;
-	
+
 	private FileInputStream schema;
 
 	@Override
@@ -56,10 +59,30 @@ public class CheckReportJob implements Job {
 
 			LogManager.getLogger(CheckReportJob.class).info("Inizio lettura dei file report");
 			// lettura dei file nella directory
-			Files.newDirectoryStream(Paths.get(StandardParameter.REPORTS_PATH),
-					path -> path.toString().endsWith(".xml")).forEach(a -> readFile(a.toFile())); // per ogni file xml
-																									// trovato lancio il
-																									// metodo di lettura
+
+			DirectoryStream<Path> stream = null;
+
+			try {
+				DirectoryStream.Filter<Path> filter = new DirectoryStream.Filter<Path>() {
+					public boolean accept(Path file) throws IOException {
+						return (file.toString().endsWith(".xml"));
+					}
+				};
+				Path dir = Paths.get(StandardParameter.REPORTS_PATH);
+				stream = Files.newDirectoryStream(dir, filter);
+				stream.forEach(a -> readFile(a.toFile()));
+			} catch (Exception e) {
+				LogManager.getLogger(ReportsReader.class).error(e);
+			} finally {
+				stream.close();
+			}
+
+			//
+			// Files.newDirectoryStream(Paths.get(StandardParameter.REPORTS_PATH),
+			// path -> path.toString().endsWith(".xml")).forEach(a -> readFile(a.toFile()));
+			// // per ogni file xml
+			// // trovato lancio il
+			// // metodo di lettura
 			LogManager.getLogger(CheckReportJob.class).info("File report letti correttamente.");
 
 			// per ogni report trovato tra i file analizzati
@@ -155,7 +178,7 @@ public class CheckReportJob implements Job {
 						LogManager.getLogger(CheckReportJob.class).fatal(e);
 					}
 				}
-				
+
 				// si aggiungono dei controlli sulla presenza o meno del template del report
 				if (ExportType.EXCEL.toString().equalsIgnoreCase(rpt.getExport().trim())) {
 					// se si è scelto il tipo di export EXCEL si controlla il fatto che
@@ -181,7 +204,7 @@ public class CheckReportJob implements Job {
 					}
 
 				}
-				
+
 			});
 
 			// rimpiazzo la vecchia lista con la nuova lista
@@ -193,7 +216,7 @@ public class CheckReportJob implements Job {
 			LogManager.getLogger(CheckReportJob.class).info("Fine esecuzione del job di controllo dei Report");
 			LogManager.getLogger(CheckReportJob.class)
 					.info("---------------------------------------------------------");
-			//ri-scrivo il report con  report e datasource attivi
+			// ri-scrivo il report con report e datasource attivi
 			RunningUtils.writeRunningReport();
 
 		} catch (IOException e) {

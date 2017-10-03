@@ -3,7 +3,9 @@ package it.db.retriever.core;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import javax.xml.bind.JAXBContext;
@@ -36,10 +38,28 @@ public class ReportsReader {
 
 			LogManager.getLogger(ReportsReader.class).info("Inizio lettura file reports");
 			// lettura dei file nella directory
-			Files.newDirectoryStream(Paths.get(StandardParameter.REPORTS_PATH),
-					path -> path.toString().endsWith(".xml")).forEach(a -> readFile(a.toFile())); // per ogni file xml
-																									// trovato lancio il
-																									// metodo di lettura
+
+			DirectoryStream<Path> stream = null;
+			try {
+				DirectoryStream.Filter<Path> filter = new DirectoryStream.Filter<Path>() {
+					public boolean accept(Path file) throws IOException {
+						return (file.toString().endsWith(".xml"));
+					}
+				};
+				Path dir = Paths.get(StandardParameter.REPORTS_PATH);
+				stream = Files.newDirectoryStream(dir, filter);
+				stream.forEach(a -> readFile(a.toFile()));
+			} catch (Exception e) {
+				LogManager.getLogger(ReportsReader.class).error(e);
+			} finally {
+				stream.close();
+			}
+
+			// Files.newDirectoryStream(Paths.get(StandardParameter.REPORTS_PATH),
+			// path -> path.toString().endsWith(".xml")).forEach(a -> readFile(a.toFile()));
+			// // per ogni file xml
+			// trovato lancio il
+			// metodo di lettura
 			LogManager.getLogger(ReportsReader.class).info("Fine lettura file reports");
 		} catch (IOException e) {
 			LogManager.getLogger(ReportsReader.class).fatal(e);

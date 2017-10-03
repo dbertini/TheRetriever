@@ -3,7 +3,9 @@ package it.db.retriever.jobs;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,7 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
 import it.db.retriever.core.ApplicationContext;
+import it.db.retriever.core.ReportsReader;
 import it.db.retriever.templates.Template;
 import it.db.retriever.utils.RunningUtils;
 import it.db.retriever.utils.StandardParameter;
@@ -45,8 +48,28 @@ public class CheckTemplateJob implements Job {
 					.info("---------------------------------------------------------");
 			LogManager.getLogger(CheckTemplateJob.class).info("Inizio esecuzione job di controllo dei Template");
 			this.newTemplates = new ArrayList<>();
-			Files.newDirectoryStream(Paths.get(StandardParameter.TEMPLATE_PATH),
-					path -> path.toString().endsWith(".xml")).forEach(a -> readFile(a.toFile()));
+			
+			DirectoryStream<Path> stream = null;
+
+			try {
+				DirectoryStream.Filter<Path> filter = new DirectoryStream.Filter<Path>() {
+					public boolean accept(Path file) throws IOException {
+						return (file.toString().endsWith(".xml"));
+					}
+				};
+				Path dir = Paths.get(StandardParameter.TEMPLATE_PATH);
+				stream = Files.newDirectoryStream(dir, filter);
+				stream.forEach(a -> readFile(a.toFile()));
+			} catch (Exception e) {
+				LogManager.getLogger(ReportsReader.class).error(e);
+			} finally {
+				stream.close();
+			}
+			
+//			
+//			
+//			Files.newDirectoryStream(Paths.get(StandardParameter.TEMPLATE_PATH),
+//					path -> path.toString().endsWith(".xml")).forEach(a -> readFile(a.toFile()));
 
 			// dopo aver recuperato la lista dei template presenti
 			// e funzionanti nella directory si controlla

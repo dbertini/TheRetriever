@@ -86,19 +86,19 @@ public class CheckReportJob implements Job {
 			LogManager.getLogger(CheckReportJob.class).info("File report letti correttamente.");
 
 			// per ogni report trovato tra i file analizzati
-			// si controlla il fatto che esista già un report schedulato
+			// si controlla il fatto che esista giï¿½ un report schedulato
 			// se non esiste viene creato
 			this.newReports.forEach(rpt -> {
-				// Per ogni report si controlla se è presente o meno
+				// Per ogni report si controlla se ï¿½ presente o meno
 				if (!ApplicationContext.INSTANCE.isReportPresent(rpt.getName())) {
-					// se il report non è presente tra quelli schedulati
+					// se il report non ï¿½ presente tra quelli schedulati
 					// si passa alla schedualzione del nuovo report
 					LogManager.getLogger(CheckReportJob.class)
 							.debug("-----------------------------------------------------");
 					LogManager.getLogger(CheckReportJob.class)
 							.debug("Inizio schedulazione del report " + rpt.getName());
 
-					// Mappa per il passaggio dati al job che eseguirà il report
+					// Mappa per il passaggio dati al job che eseguirï¿½ il report
 					JobDataMap map = new JobDataMap();
 					// aggiungo alla mappa le configurazioni di esecuzione del report
 					map.put(StandardParameter.REPORT, rpt);
@@ -123,7 +123,7 @@ public class CheckReportJob implements Job {
 
 			// per ogni report presente nel context si controlla che sia ancora
 			// presente tra quelli appena caricati dai file
-			// se non è più presente viene rimosso
+			// se non ï¿½ piï¿½ presente viene rimosso
 			ApplicationContext.INSTANCE.getReports().forEach(oldRpt -> {
 				boolean found = false;
 				// si scorrono tutti i vecchi report e si confrontano con quelli nuovi
@@ -131,11 +131,11 @@ public class CheckReportJob implements Job {
 					if (iterator.next().getName().trim().equalsIgnoreCase(oldRpt.getName()))
 						found = true;
 				}
-				// se non è stato trovato il report viene rimosso da quelli schedulati...
+				// se non ï¿½ stato trovato il report viene rimosso da quelli schedulati...
 				if (!found) {
 					try {
 						LogManager.getLogger(CheckReportJob.class).info("Rimozione del report " + oldRpt.getName()
-								+ " perchè non più presente tra i file di configurazione dei report.");
+								+ " perchï¿½ non piï¿½ presente tra i file di configurazione dei report.");
 						// rimozione della schedulazione del report
 						ApplicationContext.INSTANCE.getScheduler()
 								.deleteJob(jobKey(oldRpt.getName(), StandardParameter.REPORT_GROUP));
@@ -159,11 +159,11 @@ public class CheckReportJob implements Job {
 					// il report ha un datasource valido
 					tmpReportList.add(rpt);
 				} else {
-					// il report ha un datasource che non è pià valido
+					// il report ha un datasource che non ï¿½ piï¿½ valido
 					// quindi passo alla rimozione della schedulazione del report
 					try {
 						LogManager.getLogger(CheckReportJob.class).info("Rimozione del report " + rpt.getName()
-								+ " perchè ha associato un datasource non più valido.");
+								+ " perchï¿½ ha associato un datasource non piï¿½ valido.");
 						ApplicationContext.INSTANCE.getScheduler()
 								.deleteJob(jobKey(rpt.getName(), StandardParameter.REPORT_GROUP));
 						LogManager.getLogger(CheckReportJob.class)
@@ -171,8 +171,8 @@ public class CheckReportJob implements Job {
 
 						LogManager.getLogger(CheckReportJob.class)
 								.error("Attenzione il report report " + rpt.getName()
-										+ " è stato rimosso dall'esecuzione a perchè associato al datasource "
-										+ rpt.getDatasource() + " che non risulta essere più valido.");
+										+ " ï¿½ stato rimosso dall'esecuzione a perchï¿½ associato al datasource "
+										+ rpt.getDatasource() + " che non risulta essere piï¿½ valido.");
 
 					} catch (SchedulerException e) {
 						LogManager.getLogger(CheckReportJob.class).fatal(e);
@@ -181,10 +181,10 @@ public class CheckReportJob implements Job {
 
 				// si aggiungono dei controlli sulla presenza o meno del template del report
 				if (ExportType.EXCEL.toString().equalsIgnoreCase(rpt.getExport().trim())) {
-					// se si è scelto il tipo di export EXCEL si controlla il fatto che
+					// se si ï¿½ scelto il tipo di export EXCEL si controlla il fatto che
 					// sia stato inserito un template
 					if (rpt.getTemplate() != null && !rpt.getTemplate().trim().equalsIgnoreCase("")) {
-						// Se è stato inserito un template controllo che sia tra quelli disponibili
+						// Se ï¿½ stato inserito un template controllo che sia tra quelli disponibili
 						// altrimenti si utilizza quello di default
 						if (rpt.getTemplate() != null && !rpt.getTemplate().trim().equalsIgnoreCase("")) {
 							boolean found[] = { false };
@@ -195,12 +195,12 @@ public class CheckReportJob implements Job {
 
 							if (!found[0])
 								LogManager.getLogger(CheckReportJob.class).warn("Il report " + rpt.getName()
-										+ " ha associato un template non definito, si utilizzerà quello di default");
+										+ " ha associato un template non definito, si utilizzerï¿½ quello di default");
 						}
 					} else {
-						// Non è stato definito nessun template, quindi si utilizzerà quello di default
+						// Non ï¿½ stato definito nessun template, quindi si utilizzerï¿½ quello di default
 						LogManager.getLogger(CheckReportJob.class).warn("Il report " + rpt.getName()
-								+ " non ha associato un template, si utilizzerà quello di default.");
+								+ " non ha associato un template, si utilizzerï¿½ quello di default.");
 					}
 
 				}
@@ -238,7 +238,7 @@ public class CheckReportJob implements Job {
 			this.schema = new FileInputStream(
 					StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.REPORT_SCHEMA);
 
-			// controllo sulla validità dell'XML del report
+			// controllo sulla validitï¿½ dell'XML del report
 			FileInputStream theFile = new FileInputStream(aFile);
 			if (!XmlUtils.validateXml(theFile, this.schema)) {
 				LogManager.getLogger(CheckReportJob.class).error("Attenzione il file " + aFile.getName()
@@ -255,8 +255,8 @@ public class CheckReportJob implements Job {
 
 			// converzione da XML ad oggetto DataSource
 			Report report = (Report) jaxbUnmarshaller.unmarshal(aFile);
-			report.setFilname(aFile.getName());
-			// controllo se il report sia già stato definito in altri file per errore
+			report.setFilename(aFile.getName());
+			// controllo se il report sia giï¿½ stato definito in altri file per errore
 			if (ApplicationContext.INSTANCE.isReportPresent(report.getName())) {
 				LogManager.getLogger(CheckReportJob.class).info("Report con nome " + report.getName()
 						+ " presente nel file " + aFile.getName() + " e' gia' stato definito in precedenza!");
@@ -275,7 +275,7 @@ public class CheckReportJob implements Job {
 					LogManager.getLogger(CheckReportJob.class)
 							.error("Attenzione il report con nome " + report.getName() + " presente nel file "
 									+ aFile.getName() + " ha associato il datasource " + report.getDatasource()
-									+ " che non è presente nella lista di quelli configurati.");
+									+ " che non ï¿½ presente nella lista di quelli configurati.");
 				}
 			}
 		} catch (Exception e) {

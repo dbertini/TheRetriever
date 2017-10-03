@@ -3,7 +3,7 @@
 	elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="report" nillable="false">
 		<xs:complexType>
-			<xs:sequence>
+			<xs:all>
 				<xs:element name="name" type="xs:string" minOccurs="1"></xs:element>
 				<xs:element name="datasource" type="xs:string" minOccurs="1"></xs:element>
 				<xs:element name="sql" type="xs:string" minOccurs="1"></xs:element>
@@ -14,7 +14,11 @@
 				<xs:element name="ccnlist" type="xs:string" minOccurs="0"></xs:element>
 				<xs:element name="export" type="exportType" minOccurs="1"></xs:element>
 				<xs:element name="template" type="xs:string" minOccurs="0"></xs:element>
-			</xs:sequence>
+				<xs:element name="filename" type="xs:string" minOccurs="0"></xs:element>
+				<xs:element name="executionId" type="xs:string" minOccurs="0"></xs:element>
+				<xs:element name="lastStartTime" type="xs:string" minOccurs="0"></xs:element>
+				<xs:element name="lastStopTime" type="xs:string" minOccurs="0"></xs:element>
+			</xs:all>
 		</xs:complexType>
 	</xs:element>
 	<xs:simpleType name="exportType">

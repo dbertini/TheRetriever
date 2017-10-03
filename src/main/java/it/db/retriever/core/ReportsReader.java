@@ -79,7 +79,7 @@ public class ReportsReader {
 			this.schema = new FileInputStream(
 					StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.REPORT_SCHEMA);
 
-			// controllo sulla validità dell'XML del report
+			// controllo sulla validitï¿½ dell'XML del report
 			FileInputStream theFile = new FileInputStream(aFile);
 			if (!XmlUtils.validateXml(theFile, this.schema)) {
 				LogManager.getLogger(ReportsReader.class).error("Attenzione il file " + aFile.getName()
@@ -96,8 +96,8 @@ public class ReportsReader {
 
 			// converzione da XML ad oggetto DataSource
 			Report report = (Report) jaxbUnmarshaller.unmarshal(aFile);
-			report.setFilname(aFile.getName());
-			// controllo se il report sia già stato definito in altri file per errore
+			report.setFilename(aFile.getName());
+			// controllo se il report sia giï¿½ stato definito in altri file per errore
 			if (ApplicationContext.INSTANCE.isReportPresent(report.getName())) {
 				LogManager.getLogger(ReportsReader.class).error("Attenzione il report con nome " + report.getName()
 						+ " presente nel file " + aFile.getName() + " e' gia' stato definito in precedenza!");
@@ -110,10 +110,10 @@ public class ReportsReader {
 
 					// si aggiungono dei controlli sulla presenza o meno del template del report
 					if (ExportType.EXCEL.toString().equalsIgnoreCase(report.getExport().trim())) {
-						// se si è scelto il tipo di export EXCEL si controlla il fatto che
+						// se si ï¿½ scelto il tipo di export EXCEL si controlla il fatto che
 						// sia stato inserito un template
 						if (report.getTemplate() != null && !report.getTemplate().trim().equalsIgnoreCase("")) {
-							// Se è stato inserito un template controllo che sia tra quelli disponibili
+							// Se ï¿½ stato inserito un template controllo che sia tra quelli disponibili
 							// altrimenti si utilizza quello di default
 							if (report.getTemplate() != null && !report.getTemplate().trim().equalsIgnoreCase("")) {
 								boolean found[] = { false };
@@ -124,12 +124,12 @@ public class ReportsReader {
 
 								if (!found[0])
 									LogManager.getLogger(ReportsReader.class).warn("Il report " + report.getName()
-											+ " ha associato un template non definito, si utilizzerà quello di default");
+											+ " ha associato un template non definito, si utilizzerï¿½ quello di default");
 							}
 						} else {
-							// Non è stato definito nessun template, quindi si utilizzerà quello di default
+							// Non ï¿½ stato definito nessun template, quindi si utilizzerï¿½ quello di default
 							LogManager.getLogger(ReportsReader.class).warn("Il report " + report.getName()
-									+ " non ha associato un template, si utilizzerà quello di default.");
+									+ " non ha associato un template, si utilizzerï¿½ quello di default.");
 						}
 
 					}
@@ -141,7 +141,7 @@ public class ReportsReader {
 					LogManager.getLogger(ReportsReader.class)
 							.error("Attenzione il report con nome " + report.getName() + " presente nel file "
 									+ aFile.getName() + " ha associato il datasource " + report.getDatasource()
-									+ " che non è presente nella lista di quelli configurati.");
+									+ " che non ï¿½ presente nella lista di quelli configurati.");
 				}
 			}
 		} catch (Exception e) {

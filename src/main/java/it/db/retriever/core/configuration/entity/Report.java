@@ -25,7 +25,7 @@ public class Report implements Serializable {
 	private String export;
 	private String template;
 	
-	private String filname;
+	private String filename;
 
 	//variabili utilizzate per il logging delle esecuzioni
 	private Date lastStartTime;
@@ -197,13 +197,13 @@ public class Report implements Serializable {
 	public void setTemplate(String template) {
 		this.template = template;
 	}
-	public String getFilname() {
-		return filname;
+	public String getFilename() {
+		return filename;
 	}
 
 	@XmlElement
-	public void setFilname(String filname) {
-		this.filname = filname;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 	
 }

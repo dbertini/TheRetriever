@@ -2263,3 +2263,65 @@
 28-09-2017 08:52:10.183 [main] INFO  it.db.retriever.Retriever - Starting scheduler............
 28-09-2017 08:52:10.185 [main] INFO  it.db.retriever.Retriever - Scheduler started!
 28-09-2017 08:52:12.433 [main] INFO  it.db.retriever.Retriever - Report Retriver running up on version 4.0.0 !
+03-10-2017 21:20:22.313 [main] INFO  it.db.retriever.Retriever - Retriever is starting.....
+03-10-2017 21:20:22.322 [main] INFO  it.db.retriever.Retriever - **************** CONFIGURATION ****************
+03-10-2017 21:20:22.322 [main] INFO  it.db.retriever.Retriever - Reading retriever configuration file
+03-10-2017 21:20:22.328 [main] INFO  it.db.retriever.Retriever - Retriever configuration file read.
+03-10-2017 21:20:22.329 [main] INFO  it.db.retriever.Retriever - ***********************************************
+03-10-2017 21:20:22.329 [main] INFO  it.db.retriever.Retriever - ***************** DATASOURCES *****************
+03-10-2017 21:20:22.329 [main] INFO  it.db.retriever.Retriever - Reading datasource configuration
+03-10-2017 21:20:22.331 [main] INFO  it.db.retriever.core.DataSourcesReader - Inizio lettura file datasource
+03-10-2017 21:20:22.444 [main] INFO  it.db.retriever.core.DataSourcesReader - ---------------------------------------
+03-10-2017 21:20:22.705 [main] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for postgres
+03-10-2017 21:20:22.705 [main] INFO  it.db.retriever.core.ConnectionProvider - Using driver org.postgresql.Driver
+03-10-2017 21:20:22.738 [main] INFO  it.db.retriever.core.ConnectionProvider - Using URL: jdbc:postgresql://localhost/mypgdb
+03-10-2017 21:20:22.738 [main] INFO  it.db.retriever.core.ConnectionProvider - Using username: postgres
+03-10-2017 21:20:22.740 [main] INFO  it.db.retriever.core.ConnectionProvider - Password utilizzata: *********
+03-10-2017 21:20:23.195 [main] INFO  it.db.retriever.core.ConnectionProvider - Connection succesfull for datasource postgres
+03-10-2017 21:20:23.215 [main] INFO  it.db.retriever.core.DataSourcesReader - Fine lettura file datasource
+03-10-2017 21:20:23.215 [main] INFO  it.db.retriever.Retriever - Datasource configuration read.
+03-10-2017 21:20:23.215 [main] INFO  it.db.retriever.Retriever - ***********************************************
+03-10-2017 21:20:23.215 [main] INFO  it.db.retriever.Retriever - ****************** TEMPLATES ******************
+03-10-2017 21:20:23.216 [main] INFO  it.db.retriever.Retriever - Reading template configuration
+03-10-2017 21:20:23.217 [main] INFO  it.db.retriever.core.TemplateReader - Inizio lettura file template
+03-10-2017 21:20:23.220 [main] INFO  it.db.retriever.core.TemplateReader - ---------------------------------------
+03-10-2017 21:20:23.877 [main] INFO  it.db.retriever.core.TemplateReader - Template template_001 letto correttamente.
+03-10-2017 21:20:23.878 [main] INFO  it.db.retriever.core.TemplateReader - ---------------------------------------
+03-10-2017 21:20:23.927 [main] INFO  it.db.retriever.core.TemplateReader - Template template_base letto correttamente.
+03-10-2017 21:20:23.928 [main] INFO  it.db.retriever.core.TemplateReader - Fine lettura file template
+03-10-2017 21:20:23.929 [main] INFO  it.db.retriever.Retriever - Template configuration read.
+03-10-2017 21:20:23.929 [main] INFO  it.db.retriever.Retriever - ***********************************************
+03-10-2017 21:20:23.929 [main] INFO  it.db.retriever.Retriever - ***************** REPORTS *****************
+03-10-2017 21:20:23.929 [main] INFO  it.db.retriever.Retriever - Reading report configuration
+03-10-2017 21:20:23.931 [main] INFO  it.db.retriever.core.ReportsReader - Inizio lettura file reports
+03-10-2017 21:20:23.936 [main] INFO  it.db.retriever.core.ReportsReader - ---------------------------------------
+03-10-2017 21:20:23.971 [main] WARN  it.db.retriever.utils.XmlUtils - org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Fine del file anticipata.
+03-10-2017 21:20:23.971 [main] ERROR it.db.retriever.core.ReportsReader - Attenzione il file report2.out.xml contiene un XML non valido rispettivamente alla struttura dei report.
+03-10-2017 21:20:24.615 [main] FATAL it.db.retriever.core.ReportsReader - java.lang.Exception: Attenzione il file report2.out.xml contiene un XML non valido rispettivamente alla struttura dei report.
+03-10-2017 21:20:24.989 [main] INFO  it.db.retriever.core.ReportsReader - ---------------------------------------
+03-10-2017 21:20:25.144 [main] INFO  it.db.retriever.core.ReportsReader - Report report2 letto correttamente.
+03-10-2017 21:20:25.144 [main] INFO  it.db.retriever.core.ReportsReader - Fine lettura file reports
+03-10-2017 21:20:25.144 [main] INFO  it.db.retriever.Retriever - Report configuration read.
+03-10-2017 21:20:25.145 [main] INFO  it.db.retriever.Retriever - ***********************************************
+03-10-2017 21:20:25.145 [main] INFO  it.db.retriever.Retriever - ***************** WEBSERVER *****************
+03-10-2017 21:20:25.147 [main] INFO  it.db.retriever.Retriever - *********************************************
+03-10-2017 21:20:25.162 [Thread-2] INFO  it.db.retriever.Retriever - Starting Retriever WebServer
+03-10-2017 21:20:25.575 [main] INFO  it.db.retriever.Retriever - ****************** SCHEDULER ******************
+03-10-2017 21:20:25.617 [main] INFO  it.db.retriever.Retriever - -----------------------------------------------------
+03-10-2017 21:20:25.625 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione del report report2
+03-10-2017 21:20:25.656 [main] INFO  it.db.retriever.Retriever - Schedulazione del report report2 andata a buon fine.
+03-10-2017 21:20:25.657 [main] INFO  it.db.retriever.Retriever - ***********************************************
+03-10-2017 21:20:25.658 [main] INFO  it.db.retriever.Retriever - ****************** SYSTEM SCHEDULER ******************
+03-10-2017 21:20:25.658 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+03-10-2017 21:20:25.658 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo DataSources
+03-10-2017 21:20:25.661 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo DataSources effettuata correttamente con la definizione: '0 0,15,30,45 * ? * *'
+03-10-2017 21:20:25.661 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+03-10-2017 21:20:25.662 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo Template
+03-10-2017 21:20:25.665 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo template effettuata correttamente con la definizione: '0 2,17,32,47 * ? * *'
+03-10-2017 21:20:25.666 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+03-10-2017 21:20:25.666 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo Report
+03-10-2017 21:20:25.671 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo Report effettuata correttamente con la definizione: '0 4,19,34,49 * ? * *'
+03-10-2017 21:20:25.671 [main] INFO  it.db.retriever.Retriever - ******************************************************
+03-10-2017 21:20:25.672 [main] INFO  it.db.retriever.Retriever - Starting scheduler............
+03-10-2017 21:20:25.673 [main] INFO  it.db.retriever.Retriever - Scheduler started!
+03-10-2017 21:20:28.996 [main] INFO  it.db.retriever.Retriever - Report Retriver running up on version 4.0.0 !

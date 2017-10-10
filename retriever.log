@@ -2886,3 +2886,139 @@
 03-10-2017 22:15:00.316 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckDataSourcesJob - Job di controllo dei DataSources eseguito correttamente
 03-10-2017 22:15:00.316 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckDataSourcesJob - ---------------------------------------------------------
 03-10-2017 22:15:01.041 [main] INFO  it.db.retriever.Retriever - Report Retriver running up on version 4.0.0 !
+10-10-2017 21:56:08.086 [main] INFO  it.db.retriever.Retriever - Retriever is starting.....
+10-10-2017 21:56:08.101 [main] INFO  it.db.retriever.Retriever - **************** CONFIGURATION ****************
+10-10-2017 21:56:08.101 [main] INFO  it.db.retriever.Retriever - Reading retriever configuration file
+10-10-2017 21:56:08.179 [main] INFO  it.db.retriever.Retriever - Retriever configuration file read.
+10-10-2017 21:56:08.179 [main] INFO  it.db.retriever.Retriever - ***********************************************
+10-10-2017 21:56:08.179 [main] INFO  it.db.retriever.Retriever - ***************** DATASOURCES *****************
+10-10-2017 21:56:08.179 [main] INFO  it.db.retriever.Retriever - Reading datasource configuration
+10-10-2017 21:56:08.242 [main] INFO  it.db.retriever.core.DataSourcesReader - Inizio lettura file datasource
+10-10-2017 21:56:08.460 [main] INFO  it.db.retriever.core.DataSourcesReader - ---------------------------------------
+10-10-2017 21:56:10.007 [main] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for postgres
+10-10-2017 21:56:10.007 [main] INFO  it.db.retriever.core.ConnectionProvider - Using driver org.postgresql.Driver
+10-10-2017 21:56:10.101 [main] INFO  it.db.retriever.core.ConnectionProvider - Using URL: jdbc:postgresql://localhost/mypgdb
+10-10-2017 21:56:10.101 [main] INFO  it.db.retriever.core.ConnectionProvider - Using username: postgres
+10-10-2017 21:56:10.101 [main] INFO  it.db.retriever.core.ConnectionProvider - Password utilizzata: *********
+10-10-2017 21:56:10.679 [main] INFO  it.db.retriever.core.ConnectionProvider - Connection succesfull for datasource postgres
+10-10-2017 21:56:10.757 [main] INFO  it.db.retriever.core.DataSourcesReader - Fine lettura file datasource
+10-10-2017 21:56:10.757 [main] INFO  it.db.retriever.Retriever - Datasource configuration read.
+10-10-2017 21:56:10.757 [main] INFO  it.db.retriever.Retriever - ***********************************************
+10-10-2017 21:56:10.757 [main] INFO  it.db.retriever.Retriever - ****************** TEMPLATES ******************
+10-10-2017 21:56:10.757 [main] INFO  it.db.retriever.Retriever - Reading template configuration
+10-10-2017 21:56:10.789 [main] INFO  it.db.retriever.core.TemplateReader - Inizio lettura file template
+10-10-2017 21:56:10.835 [main] INFO  it.db.retriever.core.TemplateReader - ---------------------------------------
+10-10-2017 21:56:11.367 [main] INFO  it.db.retriever.core.TemplateReader - Template template_001 letto correttamente.
+10-10-2017 21:56:11.367 [main] INFO  it.db.retriever.core.TemplateReader - ---------------------------------------
+10-10-2017 21:56:11.461 [main] INFO  it.db.retriever.core.TemplateReader - Template template_base letto correttamente.
+10-10-2017 21:56:11.461 [main] INFO  it.db.retriever.core.TemplateReader - Fine lettura file template
+10-10-2017 21:56:11.461 [main] INFO  it.db.retriever.Retriever - Template configuration read.
+10-10-2017 21:56:11.461 [main] INFO  it.db.retriever.Retriever - ***********************************************
+10-10-2017 21:56:11.461 [main] INFO  it.db.retriever.Retriever - ***************** REPORTS *****************
+10-10-2017 21:56:11.461 [main] INFO  it.db.retriever.Retriever - Reading report configuration
+10-10-2017 21:56:11.492 [main] INFO  it.db.retriever.core.ReportsReader - Inizio lettura file reports
+10-10-2017 21:56:11.539 [main] INFO  it.db.retriever.core.ReportsReader - ---------------------------------------
+10-10-2017 21:56:11.664 [main] INFO  it.db.retriever.core.ReportsReader - Report report2 letto correttamente.
+10-10-2017 21:56:11.664 [main] INFO  it.db.retriever.core.ReportsReader - Fine lettura file reports
+10-10-2017 21:56:11.664 [main] INFO  it.db.retriever.Retriever - Report configuration read.
+10-10-2017 21:56:11.664 [main] INFO  it.db.retriever.Retriever - ***********************************************
+10-10-2017 21:56:11.664 [main] INFO  it.db.retriever.Retriever - ***************** WEBSERVER *****************
+10-10-2017 21:56:11.695 [main] INFO  it.db.retriever.Retriever - *********************************************
+10-10-2017 21:56:11.867 [Thread-2] INFO  it.db.retriever.Retriever - Starting Retriever WebServer
+10-10-2017 21:56:12.054 [main] INFO  it.db.retriever.Retriever - ****************** SCHEDULER ******************
+10-10-2017 21:56:12.164 [main] INFO  it.db.retriever.Retriever - -----------------------------------------------------
+10-10-2017 21:56:12.164 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione del report report2
+10-10-2017 21:56:12.210 [main] INFO  it.db.retriever.Retriever - Schedulazione del report report2 andata a buon fine.
+10-10-2017 21:56:12.210 [main] INFO  it.db.retriever.Retriever - ***********************************************
+10-10-2017 21:56:12.210 [main] INFO  it.db.retriever.Retriever - ****************** SYSTEM SCHEDULER ******************
+10-10-2017 21:56:12.210 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+10-10-2017 21:56:12.210 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo DataSources
+10-10-2017 21:56:12.242 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo DataSources effettuata correttamente con la definizione: '0 0,15,30,45 * ? * *'
+10-10-2017 21:56:12.242 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+10-10-2017 21:56:12.242 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo Template
+10-10-2017 21:56:12.320 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo template effettuata correttamente con la definizione: '0 2,17,32,47 * ? * *'
+10-10-2017 21:56:12.320 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+10-10-2017 21:56:12.320 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo Report
+10-10-2017 21:56:12.351 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo Report effettuata correttamente con la definizione: '0 4,19,34,49 * ? * *'
+10-10-2017 21:56:12.351 [main] INFO  it.db.retriever.Retriever - ******************************************************
+10-10-2017 21:56:12.351 [main] INFO  it.db.retriever.Retriever - Starting scheduler............
+10-10-2017 21:56:12.351 [main] INFO  it.db.retriever.Retriever - Scheduler started!
+10-10-2017 21:56:18.260 [main] INFO  it.db.retriever.Retriever - Report Retriver running up on version 4.0.0 !
+10-10-2017 21:57:31.478 [qtp1959306734-34] INFO  it.db.retriever.reportutils.ReportUtil - ----------------------------------------------------------
+10-10-2017 21:57:31.524 [qtp1959306734-34] INFO  it.db.retriever.reportutils.ReportUtil - Running job report2
+10-10-2017 21:57:31.524 [qtp1959306734-34] INFO  it.db.retriever.reportutils.ReportUtil - Esecuzione della query per il report report2
+10-10-2017 21:57:31.528 [qtp1959306734-34] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for postgres
+10-10-2017 21:57:31.529 [qtp1959306734-34] INFO  it.db.retriever.core.ConnectionProvider - Using driver org.postgresql.Driver
+10-10-2017 21:57:31.529 [qtp1959306734-34] INFO  it.db.retriever.core.ConnectionProvider - Using URL: jdbc:postgresql://localhost/mypgdb
+10-10-2017 21:57:31.530 [qtp1959306734-34] INFO  it.db.retriever.core.ConnectionProvider - Using username: postgres
+10-10-2017 21:57:31.530 [qtp1959306734-34] INFO  it.db.retriever.core.ConnectionProvider - Password utilizzata: *********
+10-10-2017 21:57:31.605 [qtp1959306734-34] INFO  it.db.retriever.core.ConnectionProvider - Connection succesfull for datasource postgres
+10-10-2017 21:57:32.175 [qtp1959306734-34] INFO  it.db.retriever.core.QueryManager - Retriving data....
+10-10-2017 21:57:32.223 [qtp1959306734-34] INFO  it.db.retriever.core.QueryManager - Data retrived....
+10-10-2017 21:57:32.224 [qtp1959306734-34] INFO  it.db.retriever.reportutils.ReportUtil - Sono stati trovati 1 record per il report report2
+10-10-2017 21:57:32.225 [qtp1959306734-34] INFO  it.db.retriever.reportutils.ReportUtil - Estrazione di tipo EXCEL per il report report2
+10-10-2017 21:57:32.556 [qtp1959306734-34] ERROR it.db.retriever.reportutils.ReportUtil - java.io.FileNotFoundException: .\temp\report_15076654522621111066888.xlsx (Impossibile trovare il percorso specificato)
+10-10-2017 21:59:04.461 [qtp1959306734-32] INFO  it.db.retriever.reportutils.ReportUtil - ----------------------------------------------------------
+10-10-2017 21:59:09.095 [qtp1959306734-32] INFO  it.db.retriever.reportutils.ReportUtil - Running job report2
+10-10-2017 21:59:09.721 [qtp1959306734-32] INFO  it.db.retriever.reportutils.ReportUtil - Esecuzione della query per il report report2
+10-10-2017 21:59:10.625 [qtp1959306734-32] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for postgres
+10-10-2017 21:59:10.625 [qtp1959306734-32] INFO  it.db.retriever.core.ConnectionProvider - Using driver org.postgresql.Driver
+10-10-2017 21:59:10.626 [qtp1959306734-32] INFO  it.db.retriever.core.ConnectionProvider - Using URL: jdbc:postgresql://localhost/mypgdb
+10-10-2017 21:59:10.627 [qtp1959306734-32] INFO  it.db.retriever.core.ConnectionProvider - Using username: postgres
+10-10-2017 21:59:10.627 [qtp1959306734-32] INFO  it.db.retriever.core.ConnectionProvider - Password utilizzata: *********
+10-10-2017 21:59:10.669 [qtp1959306734-32] INFO  it.db.retriever.core.ConnectionProvider - Connection succesfull for datasource postgres
+10-10-2017 21:59:10.673 [qtp1959306734-32] INFO  it.db.retriever.core.QueryManager - Retriving data....
+10-10-2017 21:59:10.674 [qtp1959306734-32] INFO  it.db.retriever.core.QueryManager - Data retrived....
+10-10-2017 21:59:12.780 [qtp1959306734-32] INFO  it.db.retriever.reportutils.ReportUtil - Sono stati trovati 1 record per il report report2
+10-10-2017 21:59:15.704 [qtp1959306734-32] INFO  it.db.retriever.reportutils.ReportUtil - Estrazione di tipo EXCEL per il report report2
+10-10-2017 21:59:47.105 [qtp1959306734-32] ERROR it.db.retriever.reportutils.ReportUtil - java.io.FileNotFoundException: .\temp\report_1507665557516601856843.xlsx (Impossibile trovare il percorso specificato)
+10-10-2017 22:00:12.948 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckDataSourcesJob - ---------------------------------------------------------
+10-10-2017 22:00:12.949 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckDataSourcesJob - Inizio esecuzione job di controllo dei DataSources
+10-10-2017 22:00:13.005 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckDataSourcesJob - ---------------------------------------
+10-10-2017 22:00:13.061 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckDataSourcesJob - Datasource postgres gia' stato definito
+10-10-2017 22:00:13.062 [QuartzScheduler_Worker-1] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for postgres
+10-10-2017 22:00:13.062 [QuartzScheduler_Worker-1] INFO  it.db.retriever.core.ConnectionProvider - Using driver org.postgresql.Driver
+10-10-2017 22:00:13.062 [QuartzScheduler_Worker-1] INFO  it.db.retriever.core.ConnectionProvider - Using URL: jdbc:postgresql://localhost/mypgdb
+10-10-2017 22:00:13.063 [QuartzScheduler_Worker-1] INFO  it.db.retriever.core.ConnectionProvider - Using username: postgres
+10-10-2017 22:00:13.063 [QuartzScheduler_Worker-1] INFO  it.db.retriever.core.ConnectionProvider - Password utilizzata: *********
+10-10-2017 22:00:13.115 [QuartzScheduler_Worker-1] INFO  it.db.retriever.core.ConnectionProvider - Connection succesfull for datasource postgres
+10-10-2017 22:00:13.122 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckDataSourcesJob - Datasource presenti dopo il controllo: 
+10-10-2017 22:00:13.123 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckDataSourcesJob - - postgres
+10-10-2017 22:00:13.123 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckDataSourcesJob - Job di controllo dei DataSources eseguito correttamente
+10-10-2017 22:00:13.123 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckDataSourcesJob - ---------------------------------------------------------
+10-10-2017 22:00:55.813 [qtp1959306734-41] INFO  it.db.retriever.reportutils.ReportUtil - ----------------------------------------------------------
+10-10-2017 22:00:56.752 [qtp1959306734-41] INFO  it.db.retriever.reportutils.ReportUtil - Running job report2
+10-10-2017 22:00:57.319 [qtp1959306734-41] INFO  it.db.retriever.reportutils.ReportUtil - Esecuzione della query per il report report2
+10-10-2017 22:00:57.774 [qtp1959306734-41] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for postgres
+10-10-2017 22:00:57.775 [qtp1959306734-41] INFO  it.db.retriever.core.ConnectionProvider - Using driver org.postgresql.Driver
+10-10-2017 22:00:57.776 [qtp1959306734-41] INFO  it.db.retriever.core.ConnectionProvider - Using URL: jdbc:postgresql://localhost/mypgdb
+10-10-2017 22:00:57.777 [qtp1959306734-41] INFO  it.db.retriever.core.ConnectionProvider - Using username: postgres
+10-10-2017 22:00:57.778 [qtp1959306734-41] INFO  it.db.retriever.core.ConnectionProvider - Password utilizzata: *********
+10-10-2017 22:00:57.823 [qtp1959306734-41] INFO  it.db.retriever.core.ConnectionProvider - Connection succesfull for datasource postgres
+10-10-2017 22:00:57.826 [qtp1959306734-41] INFO  it.db.retriever.core.QueryManager - Retriving data....
+10-10-2017 22:00:57.827 [qtp1959306734-41] INFO  it.db.retriever.core.QueryManager - Data retrived....
+10-10-2017 22:00:58.716 [qtp1959306734-41] INFO  it.db.retriever.reportutils.ReportUtil - Sono stati trovati 1 record per il report report2
+10-10-2017 22:01:02.689 [qtp1959306734-41] INFO  it.db.retriever.reportutils.ReportUtil - Estrazione di tipo EXCEL per il report report2
+10-10-2017 22:01:28.480 [qtp1959306734-41] INFO  it.db.retriever.reportutils.ReportUtil - File ./temp/report_15076656680411594633124.xlsx generato per il report report2
+10-10-2017 22:01:32.457 [qtp1959306734-41] INFO  it.db.retriever.reportutils.ReportUtil - Invio mail generato per il report report2
+10-10-2017 22:02:00.010 [QuartzScheduler_Worker-2] INFO  it.db.retriever.jobs.CheckTemplateJob - ---------------------------------------------------------
+10-10-2017 22:02:00.010 [QuartzScheduler_Worker-2] INFO  it.db.retriever.jobs.CheckTemplateJob - Inizio esecuzione job di controllo dei Template
+10-10-2017 22:02:00.106 [QuartzScheduler_Worker-2] INFO  it.db.retriever.jobs.CheckTemplateJob - ---------------------------------------
+10-10-2017 22:02:00.198 [QuartzScheduler_Worker-2] INFO  it.db.retriever.jobs.CheckTemplateJob - Template template_001 gia' definito
+10-10-2017 22:02:00.199 [QuartzScheduler_Worker-2] INFO  it.db.retriever.jobs.CheckTemplateJob - ---------------------------------------
+10-10-2017 22:02:00.271 [QuartzScheduler_Worker-2] INFO  it.db.retriever.jobs.CheckTemplateJob - Template template_base gia' definito
+10-10-2017 22:02:00.274 [QuartzScheduler_Worker-2] WARN  it.db.retriever.jobs.CheckTemplateJob - Il report report2 fa' riferimento al template template_001 non più presente tra quelli definiti, si utilizzerà quello di default.
+10-10-2017 22:02:00.275 [QuartzScheduler_Worker-2] INFO  it.db.retriever.jobs.CheckTemplateJob - Template presenti dopo il controllo: 
+10-10-2017 22:02:00.276 [QuartzScheduler_Worker-2] INFO  it.db.retriever.jobs.CheckTemplateJob - - template_001
+10-10-2017 22:02:00.276 [QuartzScheduler_Worker-2] INFO  it.db.retriever.jobs.CheckTemplateJob - - template_base
+10-10-2017 22:02:00.276 [QuartzScheduler_Worker-2] INFO  it.db.retriever.jobs.CheckTemplateJob - Job di controllo dei Template eseguito correttamente
+10-10-2017 22:02:00.276 [QuartzScheduler_Worker-2] INFO  it.db.retriever.jobs.CheckTemplateJob - ---------------------------------------------------------
+10-10-2017 22:02:08.375 [qtp1959306734-41] ERROR it.db.retriever.sender.JavaMailSender - javax.mail.MessagingException: Could not convert socket to TLS;
+  nested exception is:
+	java.net.SocketException: Software caused connection abort: socket write error
+10-10-2017 22:02:08.835 [qtp1959306734-41] ERROR it.db.retriever.sender.JavaMailSender - java.net.SocketException: Software caused connection abort: socket write error
+10-10-2017 22:02:20.645 [qtp1959306734-41] INFO  it.db.retriever.reportutils.ReportUtil - Job report2 eseguito correttamente.
+10-10-2017 22:02:20.891 [qtp1959306734-41] INFO  it.db.retriever.reportutils.ReportUtil - ----------------------------------------------------------
+10-10-2017 22:20:11.250 [main] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for oracle_ds
+10-10-2017 22:20:11.260 [main] INFO  it.db.retriever.core.ConnectionProvider - Using driver oracle.jdbc.driver.OracleDriver
+10-10-2017 22:20:11.261 [main] FATAL it.db.retriever.core.ConnectionProvider - java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver

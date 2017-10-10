@@ -27,7 +27,7 @@ import it.db.retriever.utils.XmlUtils;
 
 /**
  * Job che controlla la presenza di nuovi template o l'eliminazione di template
- * obsoleti per i quali è stato rimosso il file dalla cartella di default
+ * obsoleti per i quali ï¿½ stato rimosso il file dalla cartella di default
  * "./templates/"
  * 
  * @author D.Bertini
@@ -37,9 +37,7 @@ public class CheckTemplateJob implements Job {
 
 	private List<Template> newTemplates;
 
-	private FileInputStream schema;
-
-	@Override
+    @Override
 	public void execute(JobExecutionContext context) throws JobExecutionException {
 
 		// lettura dei file nella directory
@@ -94,14 +92,14 @@ public class CheckTemplateJob implements Job {
 			ApplicationContext.INSTANCE.setTemplates(tmpTP);
 
 			// si controlla la presenza di eventuali report
-			// che fanno riferimento a temaplte non più
+			// che fanno riferimento a temaplte non piï¿½
 			// presenti e si scrive il warning
 			ApplicationContext.INSTANCE.getReports().forEach(rpt -> {
 				if (rpt.getTemplate() != null && !rpt.getTemplate().trim().equalsIgnoreCase("")) {
 					if (!ApplicationContext.INSTANCE.isReportPresent(rpt.getTemplate()))
 						LogManager.getLogger(CheckTemplateJob.class)
 								.warn("Il report " + rpt.getName() + " fa' riferimento al template " + rpt.getTemplate()
-										+ " non più presente tra quelli definiti, si utilizzerà quello di default.");
+										+ " non piï¿½ presente tra quelli definiti, si utilizzerï¿½ quello di default.");
 				}
 			});
 
@@ -131,18 +129,18 @@ public class CheckTemplateJob implements Job {
 			LogManager.getLogger(CheckTemplateJob.class).info("---------------------------------------");
 
 			// inizializzo lo stream per la validazione degli XML
-			this.schema = new FileInputStream(
-					StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.TEMPLATE_SCHEMA);
-			// controllo sulla validità dell'XML del report
+            FileInputStream schema = new FileInputStream(
+                    StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.TEMPLATE_SCHEMA);
+			// controllo sulla validitï¿½ dell'XML del report
 			FileInputStream theFile = new FileInputStream(aFile);
-			if (!XmlUtils.validateXml(theFile, this.schema)) {
+			if (!XmlUtils.validateXml(theFile, schema)) {
 				LogManager.getLogger(CheckTemplateJob.class).error("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei template.");
 				throw new Exception("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei template.");
 			}
 			theFile.close();
-			this.schema.close();
+			schema.close();
 
 			// instazio il marshaller con il tipo di oggetto della classe
 			JAXBContext jaxbContext = JAXBContext.newInstance(Template.class);
@@ -151,7 +149,7 @@ public class CheckTemplateJob implements Job {
 			// converzione da XML ad oggetto Template
 			Template tp = (Template) jaxbUnmarshaller.unmarshal(aFile);
 
-			// controllo se il datasource sia già stato definito in altri file per errore
+			// controllo se il datasource sia giï¿½ stato definito in altri file per errore
 			if (ApplicationContext.INSTANCE.isTemplatePresent(tp.getName()))
 				LogManager.getLogger(CheckTemplateJob.class)
 						.info("Template " + tp.getName() + " gia' definito");

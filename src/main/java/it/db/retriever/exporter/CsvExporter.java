@@ -73,7 +73,7 @@ public class CsvExporter implements ExportInterface {
 						} else if( aQueryResponse.getColoumnType().get(i) == java.sql.Types.VARCHAR) {
 							
 							if(row.getColoumn().get(i) != null) {
-								rowStr = rowStr + (String)row.getColoumn().get(i) + ";";
+								rowStr = rowStr + row.getColoumn().get(i) + ";";
 							} else {
 								rowStr = rowStr + "" + ";";
 							}

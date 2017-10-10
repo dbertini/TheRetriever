@@ -19,7 +19,7 @@ public class StandardParameter {
 	
 	/**
 	 * Numero di thread attivi sullo scheduler per l'eventuale
-	 * lancio in parallelo di più task.
+	 * lancio in parallelo di piï¿½ task.
 	 */
 	public static final String THREAD_COUNT = "10";
 	
@@ -120,7 +120,7 @@ public class StandardParameter {
 		
 		private final String text;
 		
-		private ReportStatus(final String text) {
+		ReportStatus(final String text) {
 			this.text = text;
 		}
 		

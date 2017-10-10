@@ -1,7 +1,7 @@
 //
-// Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
+// Questo file ï¿½ stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
 // Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+// Qualsiasi modifica a questo file andrï¿½ persa durante la ricompilazione dello schema di origine. 
 // Generato il: 2017.08.11 alle 10:03:16 AM CEST 
 //
 
@@ -163,7 +163,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "valign")
     public JAXBElement<List<String>> createValign(List<String> value) {
-        return new JAXBElement<List<String>>(_Valign_QNAME, ((Class) List.class), null, ((List<String> ) value));
+        return new JAXBElement<List<String>>(_Valign_QNAME, ((Class) List.class), null, value);
     }
 
     /**
@@ -252,7 +252,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "halign")
     public JAXBElement<List<String>> createHalign(List<String> value) {
-        return new JAXBElement<List<String>>(_Halign_QNAME, ((Class) List.class), null, ((List<String> ) value));
+        return new JAXBElement<List<String>>(_Halign_QNAME, ((Class) List.class), null, value);
     }
 
 }

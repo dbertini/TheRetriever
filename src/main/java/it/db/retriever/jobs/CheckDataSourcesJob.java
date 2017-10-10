@@ -28,7 +28,7 @@ import it.db.retriever.utils.XmlUtils;
 
 /**
  * Job che controlla la presenza di nuovi datasource o l'eliminazione di
- * datasource obsoleti per i quali è stato rimosso il file dalla cartella di
+ * datasource obsoleti per i quali ï¿½ stato rimosso il file dalla cartella di
  * default "./datasorces/"
  * 
  * @author D.Bertini
@@ -38,9 +38,7 @@ public class CheckDataSourcesJob implements Job {
 
 	private List<DataSource> newDataSources;
 
-	private FileInputStream schema;
-
-	@Override
+    @Override
 	public void execute(JobExecutionContext context) throws JobExecutionException {
 
 		// lettura dei file nella directory
@@ -93,13 +91,13 @@ public class CheckDataSourcesJob implements Job {
 			ApplicationContext.INSTANCE.setDataSources(tmpDS);
 
 			// si controlla la presenza di eventuali report
-			// che fanno riferimento a datasource non più
+			// che fanno riferimento a datasource non piï¿½
 			// presenti e se ne notifica l'errore
 			ApplicationContext.INSTANCE.getReports().forEach(rep -> {
 				if (!ApplicationContext.INSTANCE.isDataSourcePresent(rep.getDatasource())) {
 					LogManager.getLogger(CheckDataSourcesJob.class)
 							.error("Attenzione il report con nome " + rep.getName() + " ha associato il datasource "
-									+ rep.getDatasource() + " che non è presente nella lista di quelli configurati.");
+									+ rep.getDatasource() + " che non ï¿½ presente nella lista di quelli configurati.");
 				}
 			});
 
@@ -130,18 +128,18 @@ public class CheckDataSourcesJob implements Job {
 			LogManager.getLogger(CheckDataSourcesJob.class).info("---------------------------------------");
 
 			// inizializzo lo stream per la validazione degli XML
-			this.schema = new FileInputStream(
-					StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.DATASOURCES_SCHEMA);
-			// controllo sulla validità dell'XML del report
+            FileInputStream schema = new FileInputStream(
+                    StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.DATASOURCES_SCHEMA);
+			// controllo sulla validitï¿½ dell'XML del report
 			FileInputStream theFile = new FileInputStream(aFile);
-			if (!XmlUtils.validateXml(theFile, this.schema)) {
+			if (!XmlUtils.validateXml(theFile, schema)) {
 				LogManager.getLogger(CheckDataSourcesJob.class).error("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei datasource.");
 				throw new Exception("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei datasource.");
 			}
 			theFile.close();
-			this.schema.close();
+			schema.close();
 
 			// instazio il marshaller con il tipo di oggetto della classe
 			JAXBContext jaxbContext = JAXBContext.newInstance(DataSource.class);
@@ -150,7 +148,7 @@ public class CheckDataSourcesJob implements Job {
 			// converzione da XML ad oggetto DataSource
 			DataSource ds = (DataSource) jaxbUnmarshaller.unmarshal(aFile);
 
-			// controllo se il datasource sia già stato definito in altri file per errore
+			// controllo se il datasource sia giï¿½ stato definito in altri file per errore
 			if (ApplicationContext.INSTANCE.isDataSourcePresent(ds.getName()))
 				LogManager.getLogger(CheckDataSourcesJob.class)
 						.info("Datasource " + ds.getName() + " gia' stato definito");

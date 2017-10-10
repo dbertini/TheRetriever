@@ -76,7 +76,7 @@ public class ExcelExporter implements ExportInterface {
 		XSSFSheet sheet = wb.createSheet("Report");
 
 		// creazione dello stile per le celle di tipo testata
-		XSSFCellStyle testataStyle = (XSSFCellStyle) wb.createCellStyle();
+		XSSFCellStyle testataStyle = wb.createCellStyle();
 		testataStyle.setFillForegroundColor(new XSSFColor(new java.awt.Color(192, 192, 192)));
 		testataStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
@@ -89,7 +89,7 @@ public class ExcelExporter implements ExportInterface {
 		testataStyle.setRightBorderColor(new XSSFColor(new java.awt.Color(0, 0, 0)));
 		testataStyle.setBorderRight(BorderStyle.MEDIUM);
 
-		XSSFCellStyle cellStyle = (XSSFCellStyle) wb.createCellStyle();
+		XSSFCellStyle cellStyle = wb.createCellStyle();
 		cellStyle.setBottomBorderColor(new XSSFColor(new java.awt.Color(0, 0, 0)));
 		cellStyle.setBorderBottom(BorderStyle.MEDIUM);
 		cellStyle.setTopBorderColor(new XSSFColor(new java.awt.Color(0, 0, 0)));
@@ -207,7 +207,7 @@ public class ExcelExporter implements ExportInterface {
 		XSSFSheet sheet = wb.createSheet("Report");
 		int rowcount[] = { 0 };
 
-		// si controlla se è stato inserito un titolo per il report
+		// si controlla se ï¿½ stato inserito un titolo per il report
 		if (aTemplate.getTitle() != null && !aTemplate.getTitle().trim().equalsIgnoreCase("")) {
 			// creo una riga
 			XSSFRow row = sheet.createRow(rowcount[0]);
@@ -216,12 +216,12 @@ public class ExcelExporter implements ExportInterface {
 			// aggiungo il titolo alla cella
 			cell.setCellValue(aTemplate.getTitle().trim());
 
-			//si controlla se è stato scelto un colore di background per il titolo
+			//si controlla se ï¿½ stato scelto un colore di background per il titolo
 			if ((aTemplate.getTitleBkgColor() != null && !aTemplate.getTitleBkgColor().trim().equalsIgnoreCase(""))
 					|| (aTemplate.getTitleTextColor() != null
 							&& !aTemplate.getTitleTextColor().trim().equalsIgnoreCase(""))) {
 
-				XSSFCellStyle style = (XSSFCellStyle) wb.createCellStyle();
+				XSSFCellStyle style = wb.createCellStyle();
 
 				if (aTemplate.getTitleBkgColor() != null && !aTemplate.getTitleBkgColor().trim().equalsIgnoreCase("")) {
 					//setting del colore di backgrouond del titolo
@@ -248,7 +248,7 @@ public class ExcelExporter implements ExportInterface {
 		}
 
 		// Si passa all'inserimento degli header delle colonne
-		XSSFCellStyle headerStyle = (XSSFCellStyle) wb.createCellStyle();
+		XSSFCellStyle headerStyle = wb.createCellStyle();
 		// con gli eventuali settaggi di default creo lo style della testata
 		// si crea il background color
 		if (aTemplate.getHeaders().getBkgColor() != null && !aTemplate.getHeaders().getBkgColor().trim().equalsIgnoreCase("")) {
@@ -274,20 +274,20 @@ public class ExcelExporter implements ExportInterface {
 			headerStyle.setAlignment(HorizontalAlignment.valueOf(aTemplate.getHeaders().getHalign().get(0).trim().toUpperCase()));
 		}
 		
-		//si controlla se è stato scelto di default si riquadrare le celle di header
+		//si controlla se ï¿½ stato scelto di default si riquadrare le celle di header
 		if(aTemplate.getHeaders().getBoxed() != null && aTemplate.getHeaders().getBoxed().getValue() != null && !aTemplate.getHeaders().getBoxed().getValue().trim().equalsIgnoreCase("")) {
 			if( aTemplate.getHeaders().getBoxed().getValue().trim().equalsIgnoreCase("Y") || aTemplate.getHeaders().getBoxed().getValue().trim().equalsIgnoreCase("S")) {
-				//si è scelto di riquadrare di default le celle di testata
+				//si ï¿½ scelto di riquadrare di default le celle di testata
 				
 				//aggiunta dello stile sul tipo do bordo
 				if( aTemplate.getHeaders().getBoxed().getBorder() !=null && !aTemplate.getHeaders().getBoxed().getBorder().isEmpty()) {
-					//si è scelto uno specifico tipo di bordo
+					//si ï¿½ scelto uno specifico tipo di bordo
 					headerStyle.setBorderBottom(BorderStyle.valueOf(aTemplate.getHeaders().getBoxed().getBorder().get(0).trim().toUpperCase()));
 					headerStyle.setBorderTop(BorderStyle.valueOf(aTemplate.getHeaders().getBoxed().getBorder().get(0).trim().toUpperCase()));
 					headerStyle.setBorderLeft(BorderStyle.valueOf(aTemplate.getHeaders().getBoxed().getBorder().get(0).trim().toUpperCase()));
 					headerStyle.setBorderRight(BorderStyle.valueOf(aTemplate.getHeaders().getBoxed().getBorder().get(0).trim().toUpperCase()));
 				} else {
-					//non è stata scelta lo specifico tipo di bordo e si
+					//non ï¿½ stata scelta lo specifico tipo di bordo e si
 					//applica quello di default
 					headerStyle.setBorderBottom(BorderStyle.THIN);
 					headerStyle.setBorderTop(BorderStyle.THIN);
@@ -303,7 +303,7 @@ public class ExcelExporter implements ExportInterface {
 					headerStyle.setLeftBorderColor(new XSSFColor(StringUtils.getColorFromRGBString(aTemplate.getHeaders().getBoxed().getColor().trim())));
 					headerStyle.setRightBorderColor(new XSSFColor(StringUtils.getColorFromRGBString(aTemplate.getHeaders().getBoxed().getColor().trim())));	
 				} else {
-					//non si è scelto, quindi si aggiunge quello di default
+					//non si ï¿½ scelto, quindi si aggiunge quello di default
 					headerStyle.setBottomBorderColor(new XSSFColor(new java.awt.Color(0,0,0)));
 					headerStyle.setTopBorderColor(new XSSFColor(new java.awt.Color(0,0,0)));
 					headerStyle.setLeftBorderColor(new XSSFColor(new java.awt.Color(0,0,0)));
@@ -371,20 +371,20 @@ public class ExcelExporter implements ExportInterface {
 							lStyle.setAlignment(HorizontalAlignment.valueOf(hdef.getHalign().get(0).trim().toUpperCase()));
 						}
 						
-						//si controlla se è stato scelto di default si riquadrare le celle di header
+						//si controlla se ï¿½ stato scelto di default si riquadrare le celle di header
 						if(hdef.getBoxed() != null && hdef.getBoxed().getValue() != null && !hdef.getBoxed().getValue().trim().equalsIgnoreCase("")) {
 							if( hdef.getBoxed().getValue().trim().equalsIgnoreCase("Y") || hdef.getBoxed().getValue().trim().equalsIgnoreCase("S")) {
-								//si è scelto di riquadrare le celle di testata
+								//si ï¿½ scelto di riquadrare le celle di testata
 								
 								//aggiunta dello stile sul tipo do bordo
 								if(hdef.getBoxed().getBorder() !=null && !hdef.getBoxed().getBorder().isEmpty()) {
-									//si è scelto uno specifico tipo di bordo
+									//si ï¿½ scelto uno specifico tipo di bordo
 									lStyle.setBorderBottom(BorderStyle.valueOf(hdef.getBoxed().getBorder().get(0).trim().toUpperCase()));
 									lStyle.setBorderTop(BorderStyle.valueOf(hdef.getBoxed().getBorder().get(0).trim().toUpperCase()));
 									lStyle.setBorderLeft(BorderStyle.valueOf(hdef.getBoxed().getBorder().get(0).trim().toUpperCase()));
 									lStyle.setBorderRight(BorderStyle.valueOf(hdef.getBoxed().getBorder().get(0).trim().toUpperCase()));
 								} else {
-									//non è stata scelta lo specifico tipo di bordo e si
+									//non ï¿½ stata scelta lo specifico tipo di bordo e si
 									//applica quello di default
 									lStyle.setBorderBottom(BorderStyle.THIN);
 									lStyle.setBorderTop(BorderStyle.THIN);
@@ -400,14 +400,14 @@ public class ExcelExporter implements ExportInterface {
 									lStyle.setLeftBorderColor(new XSSFColor(StringUtils.getColorFromRGBString(hdef.getBoxed().getColor().trim())));
 									lStyle.setRightBorderColor(new XSSFColor(StringUtils.getColorFromRGBString(hdef.getBoxed().getColor().trim())));	
 								} else {
-									//non si è scelto, quindi si aggiunge quello di default
+									//non si ï¿½ scelto, quindi si aggiunge quello di default
 									lStyle.setBottomBorderColor(new XSSFColor(new java.awt.Color(0,0,0)));
 									lStyle.setTopBorderColor(new XSSFColor(new java.awt.Color(0,0,0)));
 									lStyle.setLeftBorderColor(new XSSFColor(new java.awt.Color(0,0,0)));
 									lStyle.setRightBorderColor(new XSSFColor(new java.awt.Color(0,0,0)));	
 								}
 							} else {
-								//si è scelto di rimuovere la riquadratura
+								//si ï¿½ scelto di rimuovere la riquadratura
 								lStyle.setBorderBottom(BorderStyle.NONE);
 								lStyle.setBorderTop(BorderStyle.NONE);
 								lStyle.setBorderLeft(BorderStyle.NONE);
@@ -429,7 +429,7 @@ public class ExcelExporter implements ExportInterface {
 		}
 
 		// scrittura delle righe dei dati trovati
-		XSSFCellStyle cellStyle = (XSSFCellStyle) wb.createCellStyle();
+		XSSFCellStyle cellStyle = wb.createCellStyle();
 
 		aQueryResponse.getRows().stream().forEachOrdered(row -> {
 
@@ -488,17 +488,17 @@ public class ExcelExporter implements ExportInterface {
 							
 							
 							if(colDef.getBoxed().getValue().trim().equalsIgnoreCase("Y") || colDef.getBoxed().getValue().trim().equalsIgnoreCase("S")) {
-								//dato che è stato scelto di riquadrare la cella controllo il fatto che sia stato scelto o meno
+								//dato che ï¿½ stato scelto di riquadrare la cella controllo il fatto che sia stato scelto o meno
 								//un tipo preciso di riquadratura
 								if(colDef.getBoxed().getBorder() != null && !colDef.getBoxed().getBorder().isEmpty()) {
 									//colore di defuale
 									java.awt.Color color = new java.awt.Color(0,0,0);
 									
 									if(colDef.getBoxed().getColor() != null  && !colDef.getBoxed().getColor().trim().equalsIgnoreCase("")) {
-										//è stato scelto di utilizzare un colore specifico per i bordi
+										//ï¿½ stato scelto di utilizzare un colore specifico per i bordi
 										color = StringUtils.getColorFromRGBString(colDef.getBoxed().getColor().trim());
 									}
-									//è stato scelto uno specifico tipo di riquadratura
+									//ï¿½ stato scelto uno specifico tipo di riquadratura
 									lstyle.setBottomBorderColor(new XSSFColor(color));
 									lstyle.setBorderBottom(BorderStyle.valueOf(colDef.getBoxed().getBorder().get(0).trim().toUpperCase()));
 									lstyle.setTopBorderColor(new XSSFColor(color));
@@ -534,11 +534,11 @@ public class ExcelExporter implements ExportInterface {
 					if (aQueryResponse.getColoumnType().get(i) == java.sql.Types.NUMERIC) {
 						if (row.getColoumn().get(i) != null) {
 							
-							//si controlla se è stato scelta una formattazione 
+							//si controlla se ï¿½ stato scelta una formattazione 
 							//per il tipo di dato numerico
 							if(colDef!=null && colDef.getFormat() !=null && !colDef.getFormat().trim().equalsIgnoreCase("")) {
 								try {
-									//si è scelta una formattazione per il numero
+									//si ï¿½ scelta una formattazione per il numero
 									//quindi si prova ad applicarla
 									DecimalFormat myFormatter = new DecimalFormat(colDef.getFormat().trim());
 									rcell.setCellValue(myFormatter.format(row.getColoumn().get(i)));
@@ -551,7 +551,7 @@ public class ExcelExporter implements ExportInterface {
 									rcell.setCellValue(bd.doubleValue());
 								}
 							} else {
-								//la formattazione non è stata scelta, quindi 
+								//la formattazione non ï¿½ stata scelta, quindi 
 								//si inserisce come normale numero
 								BigDecimal bd = (BigDecimal) row.getColoumn().get(i);
 								rcell.setCellValue(bd.doubleValue());
@@ -562,11 +562,11 @@ public class ExcelExporter implements ExportInterface {
 					} else if (aQueryResponse.getColoumnType().get(i) == java.sql.Types.INTEGER) {
 						if (row.getColoumn().get(i) != null) {
 							
-							//si controlla se è stato scelta una formattazione 
+							//si controlla se ï¿½ stato scelta una formattazione 
 							//per il tipo di dato numerico
 							if(colDef!=null && colDef.getFormat() !=null && !colDef.getFormat().trim().equalsIgnoreCase("")) {
 								try {
-									//si è scelta una formattazione per il numero
+									//si ï¿½ scelta una formattazione per il numero
 									//quindi si prova ad applicarla
 									DecimalFormat myFormatter = new DecimalFormat(colDef.getFormat().trim());
 									rcell.setCellValue(myFormatter.format(row.getColoumn().get(i)));
@@ -579,7 +579,7 @@ public class ExcelExporter implements ExportInterface {
 									rcell.setCellValue(in.intValue());
 								}
 							} else {
-								//la formattazione non è stata scelta, quindi 
+								//la formattazione non ï¿½ stata scelta, quindi 
 								//si inserisce come normale numero
 								BigInteger in = (BigInteger) row.getColoumn().get(i);
 								rcell.setCellValue(in.intValue());

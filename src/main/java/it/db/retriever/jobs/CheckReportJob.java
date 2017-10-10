@@ -47,9 +47,7 @@ public class CheckReportJob implements Job {
 
 	private List<Report> newReports;
 
-	private FileInputStream schema;
-
-	@Override
+    @Override
 	public void execute(JobExecutionContext context) throws JobExecutionException {
 		this.newReports = new ArrayList<>();
 		try {
@@ -235,19 +233,19 @@ public class CheckReportJob implements Job {
 			LogManager.getLogger(CheckReportJob.class).info("---------------------------------------");
 
 			// inizializzo lo stream per la validazione degli XML
-			this.schema = new FileInputStream(
-					StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.REPORT_SCHEMA);
+            FileInputStream schema = new FileInputStream(
+                    StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.REPORT_SCHEMA);
 
 			// controllo sulla validit� dell'XML del report
 			FileInputStream theFile = new FileInputStream(aFile);
-			if (!XmlUtils.validateXml(theFile, this.schema)) {
+			if (!XmlUtils.validateXml(theFile, schema)) {
 				LogManager.getLogger(CheckReportJob.class).error("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei report.");
 				throw new Exception("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei report.");
 			}
 			theFile.close();
-			this.schema.close();
+			schema.close();
 
 			// instazio il marshaller con il tipo di oggetto della classe
 			JAXBContext jaxbContext = JAXBContext.newInstance(Report.class);

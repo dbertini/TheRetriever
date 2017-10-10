@@ -39,10 +39,7 @@ public class FileUtils {
 		long imageFileSize = imageFileChannel.size();
 		imageFileChannel.close();
 
-		if (imageFileSize > StandardParameter.LIMIT_FILE_SIZE)
-			return false;
-		else
-			return true;
+        return imageFileSize <= StandardParameter.LIMIT_FILE_SIZE;
 	}
 
 	/**

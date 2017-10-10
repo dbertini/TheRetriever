@@ -27,9 +27,7 @@ import it.db.retriever.utils.XmlUtils;
  */
 public class ReportsReader {
 
-	private FileInputStream schema;
-
-	/**
+    /**
 	 * Metodo che lancia la lettura dei file di configurazione dei report da
 	 * eseguire presenti nella directory standard
 	 */
@@ -76,19 +74,19 @@ public class ReportsReader {
 		try {
 			LogManager.getLogger(ReportsReader.class).info("---------------------------------------");
 			// inizializzo lo stream per la validazione degli XML
-			this.schema = new FileInputStream(
-					StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.REPORT_SCHEMA);
+            FileInputStream schema = new FileInputStream(
+                    StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.REPORT_SCHEMA);
 
 			// controllo sulla validit� dell'XML del report
 			FileInputStream theFile = new FileInputStream(aFile);
-			if (!XmlUtils.validateXml(theFile, this.schema)) {
+			if (!XmlUtils.validateXml(theFile, schema)) {
 				LogManager.getLogger(ReportsReader.class).error("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei report.");
 				throw new Exception("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei report.");
 			}
 			theFile.close();
-			this.schema.close();
+			schema.close();
 
 			// instazio il marshaller con il tipo di oggetto della classe
 			JAXBContext jaxbContext = JAXBContext.newInstance(Report.class);

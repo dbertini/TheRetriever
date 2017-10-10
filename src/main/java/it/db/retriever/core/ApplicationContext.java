@@ -33,7 +33,7 @@ public enum ApplicationContext {
 	
 	private Properties configuration;
 
-	private ApplicationContext() {
+	ApplicationContext() {
 		//inizializzazione delle variabili
 		this.dataSources = new ArrayList<DataSource>();
 		this.reports = new ArrayList<Report>();
@@ -72,15 +72,12 @@ public enum ApplicationContext {
 	}
 	
 	/**
-	 * Metodo per controllare se un DataSource è già presente
+	 * Metodo per controllare se un DataSource ï¿½ giï¿½ presente
 	 * @param aName nome del datasource da controllare
-	 * @return true se è già presente, altrimenti false
+	 * @return true se ï¿½ giï¿½ presente, altrimenti false
 	 */
 	public boolean isDataSourcePresent(String aName) {
-		if( this.dataSources.stream().filter(datasource -> datasource.getName().equalsIgnoreCase(aName)).count() > 0 )
-			return true;
-		else
-			return false;
+		return this.dataSources.stream().filter(datasource -> datasource.getName().equalsIgnoreCase(aName)).count() > 0;
 	}
 
 	/**
@@ -115,15 +112,12 @@ public enum ApplicationContext {
 	}
 
 	/**
-	 * Metodo per controllare se un {@link Report} è già presente nella lista
+	 * Metodo per controllare se un {@link Report} ï¿½ giï¿½ presente nella lista
 	 * @param aName nome del report da controllare
-	 * @return true se è già presente, altrimenti false
+	 * @return true se ï¿½ giï¿½ presente, altrimenti false
 	 */
 	public boolean isReportPresent(String aName) {
-		if( this.reports.stream().filter(report -> report.getName().equalsIgnoreCase(aName)).count() > 0 )
-			return true;
-		else
-			return false;
+		return this.reports.stream().filter(report -> report.getName().equalsIgnoreCase(aName)).count() > 0;
 	}
 	/**
 	 * Metodo che ritorna la lista dei {@link Report} attivi
@@ -200,15 +194,12 @@ public enum ApplicationContext {
 	}
 	
 	/**
-	 * Metodo per controllare se un {@link Template} è già presente
+	 * Metodo per controllare se un {@link Template} ï¿½ giï¿½ presente
 	 * @param aName nome del {@link Template} da controllare
-	 * @return true se è già presente, altrimenti false
+	 * @return true se ï¿½ giï¿½ presente, altrimenti false
 	 */
 	public boolean isTemplatePresent(String aName) {
-		if( this.templates.stream().filter(template -> template.getName().equalsIgnoreCase(aName)).count() > 0 )
-			return true;
-		else
-			return false;
+		return this.templates.stream().filter(template -> template.getName().equalsIgnoreCase(aName)).count() > 0;
 	}
 	/**
 	 * Metodo che ritorna la lista dei {@link Template} attivi

@@ -16,7 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import it.db.retriever.core.ApplicationContext;
 
 /**
- * Classe di utilità dove sono presenti metodi di utility 
+ * Classe di utilitï¿½ dove sono presenti metodi di utility 
  * per il runtime: debug, log, ecc ecc
  * @author D.Bertini
  *
@@ -40,7 +40,7 @@ public class RunningUtils {
 			XSSFSheet activeReportSheet = wb.createSheet("Active Report");
 			
 			//creazione dello stile per le celle di tipo testata
-			XSSFCellStyle testataStyle = (XSSFCellStyle) wb.createCellStyle();
+			XSSFCellStyle testataStyle = wb.createCellStyle();
 			testataStyle.setFillForegroundColor(new XSSFColor(new java.awt.Color(192,192,192)));
 			testataStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 			
@@ -54,7 +54,7 @@ public class RunningUtils {
 			testataStyle.setBorderRight(BorderStyle.MEDIUM);
 			
 			
-			XSSFCellStyle cellStyle = (XSSFCellStyle) wb.createCellStyle();
+			XSSFCellStyle cellStyle = wb.createCellStyle();
 			cellStyle.setBottomBorderColor(new XSSFColor(new java.awt.Color(0,0,0)));
 			cellStyle.setBorderBottom(BorderStyle.MEDIUM);
 			cellStyle.setTopBorderColor(new XSSFColor(new java.awt.Color(0,0,0)));

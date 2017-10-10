@@ -22,6 +22,6 @@ public interface ReportSenderInterface {
 	 * @param aCcnList lista dei destinatari ccn separati da ;
 	 * @param aNameFileAttachment percorso e nome del file da allegare
 	 */
-	public abstract void sendMailWithAttachments(String aSubject, String aHTMLMessage, String aRecipients, String aCcList, String aCcnList, String... aAttachmentsFile) throws Exception;
+    void sendMailWithAttachments(String aSubject, String aHTMLMessage, String aRecipients, String aCcList, String aCcnList, String... aAttachmentsFile) throws Exception;
 
 }

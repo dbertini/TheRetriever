@@ -24,9 +24,7 @@ import it.db.retriever.utils.XmlUtils;
  */
 public class TemplateReader {
 
-	private FileInputStream schema;
-	
-	/**
+    /**
 	 * Metodo che lancia la lettura dei file di configurazione dei template da
 	 * eseguire presenti nella directory standard
 	 */
@@ -73,19 +71,19 @@ public class TemplateReader {
 			LogManager.getLogger(TemplateReader.class).info("---------------------------------------");
 			
 			// inizializzo lo stream per la validazione degli XML
-			this.schema = new FileInputStream(
-					StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.TEMPLATE_SCHEMA);
+            FileInputStream schema = new FileInputStream(
+                    StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.TEMPLATE_SCHEMA);
 
-			// controllo sulla validità dell'XML del report
+			// controllo sulla validitï¿½ dell'XML del report
 			FileInputStream theFile = new FileInputStream(aFile);
-			if (!XmlUtils.validateXml(theFile, this.schema)) {
+			if (!XmlUtils.validateXml(theFile, schema)) {
 				LogManager.getLogger(TemplateReader.class).error("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei template.");
 				throw new Exception("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei template.");
 			}
 			theFile.close();
-			this.schema.close();
+			schema.close();
 			
 			// instazio il marshaller con il tipo di oggetto della classe
 			JAXBContext jaxbContext = JAXBContext.newInstance(Template.class);
@@ -94,7 +92,7 @@ public class TemplateReader {
 			// converzione da XML ad oggetto Template
 			Template template = (Template) jaxbUnmarshaller.unmarshal(aFile);
 
-			// controllo se il template sia già stato definito in altri file per errore
+			// controllo se il template sia giï¿½ stato definito in altri file per errore
 			if (ApplicationContext.INSTANCE.isTemplatePresent(template.getName())) {
 				LogManager.getLogger(TemplateReader.class).error("Attenzione il template con nome " + template.getName()
 						+ " presente nel file " + aFile.getName() + " e' gia' stato definito in precedenza!");

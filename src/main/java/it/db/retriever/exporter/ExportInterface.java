@@ -24,7 +24,7 @@ public interface ExportInterface {
 	 * @return nome del file appena creato
 	 * @throws Exception Eccezione generica
 	 */
-	public abstract String export(QueryResponse aQueryResponse, Report aReport) throws Exception;
+	String export(QueryResponse aQueryResponse, Report aReport) throws Exception;
 	
 	/**
 	 * Metodo di default dell'interfaccia per la generazione di un nome univoco del report
@@ -32,11 +32,10 @@ public interface ExportInterface {
 	 * @return nome del report esempio: "report_000000000000000000000"
 	 * 
 	 */
-	public default String generateFileName() {
+	default String generateFileName() {
 		Date data = new Date();
 		Random rdm = new Random();
-		String reportName = "report_" + data.getTime() + rdm.nextInt();
-		return reportName;
+        return "report_" + data.getTime() + rdm.nextInt();
 	}
 
 }

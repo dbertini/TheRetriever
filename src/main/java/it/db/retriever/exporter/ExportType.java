@@ -17,7 +17,7 @@ public enum ExportType {
 	private final String text;
 	private final String classname;
 
-	private ExportType(final String text, String classname) {
+	ExportType(final String text, String classname) {
 		this.text = text;
 		this.classname = classname;
 	}

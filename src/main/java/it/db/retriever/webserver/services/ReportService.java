@@ -18,6 +18,7 @@ import javax.xml.bind.Unmarshaller;
 
 import it.db.retriever.core.ApplicationContext;
 import it.db.retriever.core.configuration.entity.Report;
+import it.db.retriever.reportutils.ReportUtil;
 import it.db.retriever.utils.StandardParameter;
 
 import java.io.File;
@@ -54,6 +55,23 @@ public class ReportService {
             return Response.ok("Nessun report trovato per il nome " + reportname).build();
 
     }
+
+    @GET
+    @Path("runReport/{reportname}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response runReport(@PathParam("reportname") String reportname) {
+        System.out.println("Report name selezionato: " + reportname);
+        try {
+            Report report = ApplicationContext.INSTANCE.getReport(reportname);
+            ReportUtil.runReport(report);
+            return Response.ok().build();
+        }catch (Exception ex) {
+            ex.printStackTrace();
+            return Response.status(Status.NOT_FOUND).build();
+        }
+    }
+
+
 
     @POST
     @Path("editreport")

@@ -26,8 +26,6 @@ import it.db.retriever.utils.XmlUtils;
  */
 public class DataSourcesReader {
 
-	private FileInputStream schema;
-
 	/**
 	 * Metodo che lancia la lettura dei file di configurazione dei datasource
 	 * presenti nella directory standard
@@ -73,18 +71,18 @@ public class DataSourcesReader {
 		try {
 			LogManager.getLogger(DataSourcesReader.class).info("---------------------------------------");
 			// inizializzo lo stream per la validazione degli XML
-			this.schema = new FileInputStream(
+			FileInputStream schema = new FileInputStream(
 					StandardParameter.SCHEMA_VALIDATOR_PATH + StandardParameter.DATASOURCES_SCHEMA);
 			// controllo sulla validità dell'XML del report
 			FileInputStream theFile = new FileInputStream(aFile);
-			if (!XmlUtils.validateXml(theFile, this.schema)) {
+			if (!XmlUtils.validateXml(theFile, schema)) {
 				LogManager.getLogger(DataSourcesReader.class).error("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei datasource.");
 				throw new Exception("Attenzione il file " + aFile.getName()
 						+ " contiene un XML non valido rispettivamente alla struttura dei datasource.");
 			}
 			theFile.close();
-			this.schema.close();
+			schema.close();
 			// instazio il marshaller con il tipo di oggetto della classe
 			JAXBContext jaxbContext = JAXBContext.newInstance(DataSource.class);
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();

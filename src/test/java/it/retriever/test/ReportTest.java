@@ -14,7 +14,7 @@ public class ReportTest {
 	public void validationTest() {
 		try {
 			boolean valid = XmlUtils.validateXml(
-					new FileInputStream(StandardParameter.REPORTS_PATH + "report.xml"),
+					new FileInputStream(StandardParameter.REPORTS_PATH + "report2.xml"),
 					new FileInputStream(StandardParameter.SCHEMA_VALIDATOR_PATH +  StandardParameter.REPORT_SCHEMA));
 			assert(valid);
 		} catch (FileNotFoundException e) {

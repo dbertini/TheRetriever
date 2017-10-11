@@ -42,11 +42,11 @@
 			<version>2.7</version>
 		</dependency>
 		<!-- jdbc oracle -->
-		<!-- <dependency> -->
-		<!-- <groupId>com.oracle.db.drivers</groupId> -->
-		<!-- <artifactId>ojdbc</artifactId> -->
-		<!-- <version>1.6</version> -->
-		<!-- </dependency> -->
+		<dependency>
+		<groupId>com.oracle.db.drivers</groupId>
+		<artifactId>ojdbc</artifactId>
+		<version>1.6</version>
+		</dependency>
 		<!-- Libreria per l'interazione con Exchange -->
 		<!-- <dependency> -->
 		<!-- <groupId>it.bcc.sinergia</groupId> -->

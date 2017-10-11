@@ -1,6 +1,11 @@
 package it.db.retriever.webserver.services;
 
-import static org.quartz.JobKey.jobKey;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.Date;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -20,13 +25,6 @@ import it.db.retriever.core.ApplicationContext;
 import it.db.retriever.core.configuration.entity.Report;
 import it.db.retriever.reportutils.ReportUtil;
 import it.db.retriever.utils.StandardParameter;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.Date;
 
 @Path("api/reports")
 public class ReportService {

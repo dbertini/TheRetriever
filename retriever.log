@@ -3022,3 +3022,101 @@
 10-10-2017 22:20:11.250 [main] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for oracle_ds
 10-10-2017 22:20:11.260 [main] INFO  it.db.retriever.core.ConnectionProvider - Using driver oracle.jdbc.driver.OracleDriver
 10-10-2017 22:20:11.261 [main] FATAL it.db.retriever.core.ConnectionProvider - java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+11-10-2017 09:36:23.128 [main] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for oracle_ds
+11-10-2017 09:36:23.135 [main] INFO  it.db.retriever.core.ConnectionProvider - Using driver oracle.jdbc.driver.OracleDriver
+11-10-2017 09:36:23.137 [main] FATAL it.db.retriever.core.ConnectionProvider - java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+11-10-2017 09:37:56.805 [main] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for oracle_ds
+11-10-2017 09:37:56.815 [main] INFO  it.db.retriever.core.ConnectionProvider - Using driver oracle.jdbc.driver.OracleDriver
+11-10-2017 09:37:56.816 [main] FATAL it.db.retriever.core.ConnectionProvider - java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+11-10-2017 09:38:59.184 [main] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for oracle_ds
+11-10-2017 09:38:59.189 [main] INFO  it.db.retriever.core.ConnectionProvider - Using driver oracle.jdbc.driver.OracleDriver
+11-10-2017 09:38:59.232 [main] INFO  it.db.retriever.core.ConnectionProvider - Using URL: jdbc:oracle:thin:@(DESCRIPTION_LIST=(LOAD_BALANCE=off)(FAILOVER=on)(DESCRIPTION=(CONNECT_TIMEOUT=3)(RETRY_COUNT=3)(ADDRESS_LIST=(LOAD_BALANCE=on)(FAILOVER=ON)(ADDRESS=(PROTOCOL=tcp)(HOST=sc01-prodbccsi-scan.gbi.bcc.it)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=prim_PO11GSIN)))(DESCRIPTION=(CONNECT_TIMEOUT=3)(RETRY_COUNT=3)(ADDRESS_LIST=(LOAD_BALANCE=on)(FAILOVER=ON)(ADDRESS=(PROTOCOL=tcp)(HOST=sc02-prodbccsi-scan.gbi.bcc.it)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=prim_PO11GSIN))))
+11-10-2017 09:38:59.233 [main] INFO  it.db.retriever.core.ConnectionProvider - Using username: wsuser
+11-10-2017 09:38:59.233 [main] INFO  it.db.retriever.core.ConnectionProvider - Password utilizzata: *********
+11-10-2017 09:39:00.098 [main] INFO  it.db.retriever.core.ConnectionProvider - Connection succesfull for datasource oracle_ds
+11-10-2017 10:30:24.309 [main] INFO  it.db.retriever.Retriever - Retriever is starting.....
+11-10-2017 10:30:24.315 [main] INFO  it.db.retriever.Retriever - **************** CONFIGURATION ****************
+11-10-2017 10:30:24.315 [main] INFO  it.db.retriever.Retriever - Reading retriever configuration file
+11-10-2017 10:30:24.329 [main] INFO  it.db.retriever.Retriever - Retriever configuration file read.
+11-10-2017 10:30:24.330 [main] INFO  it.db.retriever.Retriever - ***********************************************
+11-10-2017 10:30:24.330 [main] INFO  it.db.retriever.Retriever - ***************** DATASOURCES *****************
+11-10-2017 10:30:24.330 [main] INFO  it.db.retriever.Retriever - Reading datasource configuration
+11-10-2017 10:30:24.336 [main] INFO  it.db.retriever.core.DataSourcesReader - Inizio lettura file datasource
+11-10-2017 10:30:24.415 [main] INFO  it.db.retriever.core.DataSourcesReader - ---------------------------------------
+11-10-2017 10:30:24.600 [main] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for monet
+11-10-2017 10:30:24.601 [main] INFO  it.db.retriever.core.ConnectionProvider - Using driver oracle.jdbc.driver.OracleDriver
+11-10-2017 10:30:24.628 [main] INFO  it.db.retriever.core.ConnectionProvider - Using URL: jdbc:oracle:thin:@sc01-testbccsi-scan.gbi.bcc.it:1521/SO11GSIN
+11-10-2017 10:30:24.628 [main] INFO  it.db.retriever.core.ConnectionProvider - Using username: monet
+11-10-2017 10:30:24.628 [main] INFO  it.db.retriever.core.ConnectionProvider - Password utilizzata: *********
+11-10-2017 10:30:25.373 [main] INFO  it.db.retriever.core.ConnectionProvider - Connection succesfull for datasource monet
+11-10-2017 10:30:25.415 [main] INFO  it.db.retriever.core.DataSourcesReader - Fine lettura file datasource
+11-10-2017 10:30:25.415 [main] INFO  it.db.retriever.Retriever - Datasource configuration read.
+11-10-2017 10:30:25.416 [main] INFO  it.db.retriever.Retriever - ***********************************************
+11-10-2017 10:30:25.416 [main] INFO  it.db.retriever.Retriever - ****************** TEMPLATES ******************
+11-10-2017 10:30:25.416 [main] INFO  it.db.retriever.Retriever - Reading template configuration
+11-10-2017 10:30:25.422 [main] INFO  it.db.retriever.core.TemplateReader - Inizio lettura file template
+11-10-2017 10:30:25.428 [main] INFO  it.db.retriever.core.TemplateReader - ---------------------------------------
+11-10-2017 10:30:25.572 [main] INFO  it.db.retriever.core.TemplateReader - Template template_001 letto correttamente.
+11-10-2017 10:30:25.572 [main] INFO  it.db.retriever.core.TemplateReader - ---------------------------------------
+11-10-2017 10:30:25.628 [main] INFO  it.db.retriever.core.TemplateReader - Template template_base letto correttamente.
+11-10-2017 10:30:25.629 [main] INFO  it.db.retriever.core.TemplateReader - Fine lettura file template
+11-10-2017 10:30:25.629 [main] INFO  it.db.retriever.Retriever - Template configuration read.
+11-10-2017 10:30:25.629 [main] INFO  it.db.retriever.Retriever - ***********************************************
+11-10-2017 10:30:25.629 [main] INFO  it.db.retriever.Retriever - ***************** REPORTS *****************
+11-10-2017 10:30:25.630 [main] INFO  it.db.retriever.Retriever - Reading report configuration
+11-10-2017 10:30:25.637 [main] INFO  it.db.retriever.core.ReportsReader - Inizio lettura file reports
+11-10-2017 10:30:25.644 [main] INFO  it.db.retriever.core.ReportsReader - ---------------------------------------
+11-10-2017 10:30:25.710 [main] WARN  it.db.retriever.core.ReportsReader - Il report report1 non ha associato un template, si utilizzer� quello di default.
+11-10-2017 10:30:25.710 [main] INFO  it.db.retriever.core.ReportsReader - Report report1 letto correttamente.
+11-10-2017 10:30:25.710 [main] INFO  it.db.retriever.core.ReportsReader - Fine lettura file reports
+11-10-2017 10:30:25.711 [main] INFO  it.db.retriever.Retriever - Report configuration read.
+11-10-2017 10:30:25.711 [main] INFO  it.db.retriever.Retriever - ***********************************************
+11-10-2017 10:30:25.711 [main] INFO  it.db.retriever.Retriever - ***************** WEBSERVER *****************
+11-10-2017 10:30:25.718 [main] INFO  it.db.retriever.Retriever - *********************************************
+11-10-2017 10:30:25.742 [Thread-2] INFO  it.db.retriever.Retriever - Starting Retriever WebServer
+11-10-2017 10:30:25.901 [main] INFO  it.db.retriever.Retriever - ****************** SCHEDULER ******************
+11-10-2017 10:30:25.910 [main] INFO  it.db.retriever.Retriever - -----------------------------------------------------
+11-10-2017 10:30:25.911 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione del report report1
+11-10-2017 10:30:25.932 [main] INFO  it.db.retriever.Retriever - Schedulazione del report report1 andata a buon fine.
+11-10-2017 10:30:25.932 [main] INFO  it.db.retriever.Retriever - ***********************************************
+11-10-2017 10:30:25.932 [main] INFO  it.db.retriever.Retriever - ****************** SYSTEM SCHEDULER ******************
+11-10-2017 10:30:25.933 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+11-10-2017 10:30:25.934 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo DataSources
+11-10-2017 10:30:25.942 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo DataSources effettuata correttamente con la definizione: '0 0,15,30,45 * ? * *'
+11-10-2017 10:30:25.942 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+11-10-2017 10:30:25.943 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo Template
+11-10-2017 10:30:25.949 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo template effettuata correttamente con la definizione: '0 2,17,32,47 * ? * *'
+11-10-2017 10:30:25.950 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+11-10-2017 10:30:25.950 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo Report
+11-10-2017 10:30:25.957 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo Report effettuata correttamente con la definizione: '0 4,19,34,49 * ? * *'
+11-10-2017 10:30:25.957 [main] INFO  it.db.retriever.Retriever - ******************************************************
+11-10-2017 10:30:25.957 [main] INFO  it.db.retriever.Retriever - Starting scheduler............
+11-10-2017 10:30:25.958 [main] INFO  it.db.retriever.Retriever - Scheduler started!
+11-10-2017 10:30:27.659 [main] INFO  it.db.retriever.Retriever - Report Retriver running up on version 4.1.0 !
+11-10-2017 10:32:00.006 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - ---------------------------------------------------------
+11-10-2017 10:32:00.006 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - Inizio esecuzione job di controllo dei Template
+11-10-2017 10:32:00.013 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - ---------------------------------------
+11-10-2017 10:32:00.071 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - Template template_001 gia' definito
+11-10-2017 10:32:00.072 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - ---------------------------------------
+11-10-2017 10:32:00.112 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - Template template_base gia' definito
+11-10-2017 10:32:00.115 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - Template presenti dopo il controllo: 
+11-10-2017 10:32:00.116 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - - template_001
+11-10-2017 10:32:00.116 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - - template_base
+11-10-2017 10:32:00.116 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - Job di controllo dei Template eseguito correttamente
+11-10-2017 10:32:00.117 [QuartzScheduler_Worker-1] INFO  it.db.retriever.jobs.CheckTemplateJob - ---------------------------------------------------------
+11-10-2017 10:33:20.188 [qtp693232345-29] INFO  it.db.retriever.reportutils.ReportUtil - ----------------------------------------------------------
+11-10-2017 10:33:20.206 [qtp693232345-29] INFO  it.db.retriever.reportutils.ReportUtil - Running job report1
+11-10-2017 10:33:20.207 [qtp693232345-29] INFO  it.db.retriever.reportutils.ReportUtil - Esecuzione della query per il report report1
+11-10-2017 10:33:20.220 [qtp693232345-29] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for monet
+11-10-2017 10:33:20.220 [qtp693232345-29] INFO  it.db.retriever.core.ConnectionProvider - Using driver oracle.jdbc.driver.OracleDriver
+11-10-2017 10:33:20.220 [qtp693232345-29] INFO  it.db.retriever.core.ConnectionProvider - Using URL: jdbc:oracle:thin:@sc01-testbccsi-scan.gbi.bcc.it:1521/SO11GSIN
+11-10-2017 10:33:20.221 [qtp693232345-29] INFO  it.db.retriever.core.ConnectionProvider - Using username: monet
+11-10-2017 10:33:20.221 [qtp693232345-29] INFO  it.db.retriever.core.ConnectionProvider - Password utilizzata: *********
+11-10-2017 10:33:20.486 [qtp693232345-29] INFO  it.db.retriever.core.ConnectionProvider - Connection succesfull for datasource monet
+11-10-2017 10:33:20.604 [qtp693232345-29] INFO  it.db.retriever.core.QueryManager - Retriving data....
+11-10-2017 10:33:20.610 [qtp693232345-29] INFO  it.db.retriever.core.QueryManager - Data retrived....
+11-10-2017 10:33:20.633 [qtp693232345-29] INFO  it.db.retriever.reportutils.ReportUtil - Sono stati trovati 8 record per il report report1
+11-10-2017 10:33:20.634 [qtp693232345-29] INFO  it.db.retriever.reportutils.ReportUtil - Estrazione di tipo EXCEL per il report report1
+11-10-2017 10:33:20.861 [qtp693232345-29] INFO  it.db.retriever.reportutils.ReportUtil - File ./temp/report_1507710800646-1950060394.xlsx generato per il report report1
+11-10-2017 10:33:20.862 [qtp693232345-29] INFO  it.db.retriever.reportutils.ReportUtil - Invio mail generato per il report report1
+11-10-2017 10:33:20.898 [qtp693232345-29] ERROR it.db.retriever.reportutils.ReportUtil - java.lang.NullPointerException

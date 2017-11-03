@@ -15,7 +15,10 @@ public class InfoService {
   @Path("version")
   @Produces({MediaType.APPLICATION_JSON})
   public Response getVersion() {
-	  return Response.ok(Version.version).build();
+	  
+	  Version ver = new Version();
+	  
+	  return Response.ok(ver).build();
   }
   
   

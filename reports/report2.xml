@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE report>
+<report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ReportSchema.xsd">
+	<name>report2</name>
+	<datasource>monet</datasource>
+	<sql>
+		select *
+          from wsuser.cerved_mon_nonclienti a,
+               movimenti_posizioni x
+ 		 where a.id_anagrafica = x.ndg
+   		   and a.abi = x.abi
+	</sql>
+	<cron>00 00 10 ? * MON,TUE,WED,THU,FRI</cron>
+	<description>Report estrazione data</description>
+	<recipient>david.bertini@gmail.com</recipient>
+<!-- 	<cclist>david.bertini@gmail.com</cclist> -->
+<!-- 	<ccnlist>david.bertini@gmail.com</ccnlist> -->
+	<export>EXCEL</export>
+<!-- 	<template>template_001</template> -->
+</report>

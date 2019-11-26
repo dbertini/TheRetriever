@@ -5,12 +5,15 @@ import java.util.concurrent.Executors;
 
 import com.sun.net.httpserver.HttpServer;
 
+import it.db.retriever.webserver.services11.InfoServiceConfiguration;
+import it.db.retriever.webserver.services11.InfoVersionService;
+
 public class RetrieverServer11 {
 	public static void startServerRetriver(int aPort) {
 		try {
 			HttpServer server = HttpServer.create(new InetSocketAddress(aPort), 0);
-			//server.createContext("/requests", new ServletHandler());
-			//server.createContext("/", new HtmlHandler());
+			server.createContext("/rest/api/v11/info/version", new InfoVersionService());
+			server.createContext("/rest/api/v11/info/configuration", new InfoServiceConfiguration() );
 			server.setExecutor(Executors.newCachedThreadPool()); // creates a default executor
 			server.start();
 		} catch (Exception e) {

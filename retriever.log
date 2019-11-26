@@ -5727,3 +5727,59 @@
 03-11-2017 17:02:00.068 [QuartzScheduler_Worker-9] INFO  it.db.retriever.jobs.CheckTemplateJob - - template_base
 03-11-2017 17:02:00.068 [QuartzScheduler_Worker-9] INFO  it.db.retriever.jobs.CheckTemplateJob - Job di controllo dei Template eseguito correttamente
 03-11-2017 17:02:00.068 [QuartzScheduler_Worker-9] INFO  it.db.retriever.jobs.CheckTemplateJob - ---------------------------------------------------------
+26-11-2019 12:04:28.047 [main] INFO  it.db.retriever.Retriever - ***************** WEBSERVER *****************
+26-11-2019 12:04:28.053 [main] INFO  it.db.retriever.Retriever - *********************************************
+26-11-2019 12:10:26.037 [main] INFO  it.db.retriever.Retriever - Retriever is starting.....
+26-11-2019 12:10:26.040 [main] INFO  it.db.retriever.Retriever - **************** CONFIGURATION ****************
+26-11-2019 12:10:26.040 [main] INFO  it.db.retriever.Retriever - Reading retriever configuration file
+26-11-2019 12:10:26.041 [main] INFO  it.db.retriever.Retriever - Retriever configuration file read.
+26-11-2019 12:10:26.042 [main] INFO  it.db.retriever.Retriever - ***********************************************
+26-11-2019 12:10:26.042 [main] INFO  it.db.retriever.Retriever - ***************** DATASOURCES *****************
+26-11-2019 12:10:26.042 [main] INFO  it.db.retriever.Retriever - Reading datasource configuration
+26-11-2019 12:10:26.043 [main] INFO  it.db.retriever.core.DataSourcesReader - Inizio lettura file datasource
+26-11-2019 12:10:26.046 [main] INFO  it.db.retriever.core.DataSourcesReader - ---------------------------------------
+26-11-2019 12:10:26.260 [main] INFO  it.db.retriever.core.ConnectionProvider - Initializing connection for monet
+26-11-2019 12:10:26.260 [main] INFO  it.db.retriever.core.ConnectionProvider - Using driver oracle.jdbc.driver.OracleDriver
+26-11-2019 12:10:26.262 [main] FATAL it.db.retriever.core.ConnectionProvider - java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+26-11-2019 12:10:26.785 [main] ERROR it.db.retriever.core.DataSourcesReader - Attenzione il datasource con nome monet presente nel file monet.xml non riesce a connettersi alla base dati definita.
+26-11-2019 12:10:27.117 [main] INFO  it.db.retriever.core.DataSourcesReader - Fine lettura file datasource
+26-11-2019 12:10:27.120 [main] INFO  it.db.retriever.Retriever - Datasource configuration read.
+26-11-2019 12:10:27.120 [main] INFO  it.db.retriever.Retriever - ***********************************************
+26-11-2019 12:10:27.120 [main] INFO  it.db.retriever.Retriever - ****************** TEMPLATES ******************
+26-11-2019 12:10:27.121 [main] INFO  it.db.retriever.Retriever - Reading template configuration
+26-11-2019 12:10:27.122 [main] INFO  it.db.retriever.core.TemplateReader - Inizio lettura file template
+26-11-2019 12:10:27.126 [main] INFO  it.db.retriever.core.TemplateReader - ---------------------------------------
+26-11-2019 12:10:27.277 [main] INFO  it.db.retriever.core.TemplateReader - Template template_base letto correttamente.
+26-11-2019 12:10:27.277 [main] INFO  it.db.retriever.core.TemplateReader - ---------------------------------------
+26-11-2019 12:10:27.348 [main] INFO  it.db.retriever.core.TemplateReader - Template template_001 letto correttamente.
+26-11-2019 12:10:27.349 [main] INFO  it.db.retriever.core.TemplateReader - Fine lettura file template
+26-11-2019 12:10:27.349 [main] INFO  it.db.retriever.Retriever - Template configuration read.
+26-11-2019 12:10:27.349 [main] INFO  it.db.retriever.Retriever - ***********************************************
+26-11-2019 12:10:27.350 [main] INFO  it.db.retriever.Retriever - ***************** REPORTS *****************
+26-11-2019 12:10:27.350 [main] INFO  it.db.retriever.Retriever - Reading report configuration
+26-11-2019 12:10:27.351 [main] INFO  it.db.retriever.core.ReportsReader - Inizio lettura file reports
+26-11-2019 12:10:27.352 [main] INFO  it.db.retriever.core.ReportsReader - ---------------------------------------
+26-11-2019 12:10:27.389 [main] ERROR it.db.retriever.core.ReportsReader - Attenzione il report con nome report2 presente nel file report2.xml ha associato il datasource monet che non � presente nella lista di quelli configurati.
+26-11-2019 12:10:27.714 [main] INFO  it.db.retriever.core.ReportsReader - ---------------------------------------
+26-11-2019 12:10:27.745 [main] ERROR it.db.retriever.core.ReportsReader - Attenzione il report con nome report1 presente nel file report.xml ha associato il datasource monet che non � presente nella lista di quelli configurati.
+26-11-2019 12:10:28.091 [main] INFO  it.db.retriever.core.ReportsReader - Fine lettura file reports
+26-11-2019 12:10:28.092 [main] INFO  it.db.retriever.Retriever - Report configuration read.
+26-11-2019 12:10:28.093 [main] INFO  it.db.retriever.Retriever - ***********************************************
+26-11-2019 12:10:28.093 [main] INFO  it.db.retriever.Retriever - ***************** WEBSERVER *****************
+26-11-2019 12:10:28.100 [main] INFO  it.db.retriever.Retriever - *********************************************
+26-11-2019 12:10:28.195 [main] INFO  it.db.retriever.Retriever - ****************** SCHEDULER ******************
+26-11-2019 12:10:28.198 [main] INFO  it.db.retriever.Retriever - ***********************************************
+26-11-2019 12:10:28.199 [main] INFO  it.db.retriever.Retriever - ****************** SYSTEM SCHEDULER ******************
+26-11-2019 12:10:28.199 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+26-11-2019 12:10:28.199 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo DataSources
+26-11-2019 12:10:28.211 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo DataSources effettuata correttamente con la definizione: '0 0,15,30,45 * ? * *'
+26-11-2019 12:10:28.212 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+26-11-2019 12:10:28.212 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo Template
+26-11-2019 12:10:28.215 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo template effettuata correttamente con la definizione: '0 2,17,32,47 * ? * *'
+26-11-2019 12:10:28.215 [main] INFO  it.db.retriever.Retriever - ----------------------------------------------------------
+26-11-2019 12:10:28.215 [main] INFO  it.db.retriever.Retriever - Inizio schedulazione job di controllo Report
+26-11-2019 12:10:28.219 [main] INFO  it.db.retriever.Retriever - Schedulazione job di controllo Report effettuata correttamente con la definizione: '0 4,19,34,49 * ? * *'
+26-11-2019 12:10:28.221 [main] INFO  it.db.retriever.Retriever - ******************************************************
+26-11-2019 12:10:28.221 [main] INFO  it.db.retriever.Retriever - Starting scheduler............
+26-11-2019 12:10:28.222 [main] INFO  it.db.retriever.Retriever - Scheduler started!
+26-11-2019 12:10:31.929 [main] INFO  it.db.retriever.Retriever - Report Retriver running up on version 4.1.0 !

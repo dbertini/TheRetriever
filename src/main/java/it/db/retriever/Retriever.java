@@ -25,6 +25,7 @@ import it.db.retriever.utils.RunningUtils;
 import it.db.retriever.utils.StandardParameter;
 import it.db.retriever.utils.Version;
 import it.db.retriever.webserver.RetrieverServer;
+import it.db.retriever.webserver.RetrieverServer11;
 
 public class Retriever {
 
@@ -104,7 +105,8 @@ public class Retriever {
 		new Thread()
 		{
 		    public void run() {
-		    	RetrieverServer.startServerRetriver(2222);
+//		    	RetrieverServer.startServerRetriver(2222);
+		    	RetrieverServer11.startServerRetriver(2211);
 		    }
 		}.start();
 		LogManager.getLogger(Retriever.class).info("*********************************************");
@@ -123,7 +125,7 @@ public class Retriever {
 			LogManager.getLogger(Retriever.class).info("-----------------------------------------------------");
 			LogManager.getLogger(Retriever.class).info("Inizio schedulazione del report " + report.getName());
 
-			// Mappa per il passaggio dati al job che eseguirà il report
+			// Mappa per il passaggio dati al job che eseguirï¿½ il report
 			JobDataMap map = new JobDataMap();
 			// aggiungo alla mappa le configurazioni di esecuzione del report
 			map.put(StandardParameter.REPORT, report);

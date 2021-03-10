@@ -13,7 +13,7 @@
 	<properties>
 		<quartz.version>2.3.2</quartz.version>
 		<apache.poi.version>3.16</apache.poi.version>
-		<jetty.version>9.4.24.v20191120</jetty.version>
+		<jetty.version>11.0.1</jetty.version>
 		<jersey.version>2.16</jersey.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
